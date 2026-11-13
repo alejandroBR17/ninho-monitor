@@ -1,89 +1,115 @@
-# Ninho Monitor
+<p align="center"><img src="docs/media/cover.svg" alt="Ninho Monitor — uma câmera, três formas de acompanhar" width="100%"></p>
 
-**Monitoramento pessoal com Android, navegador e uma ponte Windows.**
+<p align="center">
+  <a href="https://github.com/alejandroBR17/ninho-monitor/actions/workflows/ci.yml"><img src="https://github.com/alejandroBR17/ninho-monitor/actions/workflows/ci.yml/badge.svg" alt="Status real dos testes no GitHub Actions"></a>
+  &nbsp; <a href="LICENSE">Licença MIT</a> · <a href="docs/CASE-STUDY.md">Estudo de caso</a> · <a href="docs/ARCHITECTURE.md">Arquitetura</a> · <a href="docs/DEMO.md">Executar a demonstração</a>
+</p>
 
-Um projeto que conecta uma câmera RTSP/ONVIF a um visualizador próprio, inclusive no iPhone, com histórico de eventos, notificações de movimento e rotinas de acompanhamento.
+**Uma câmera RTSP/ONVIF existente, um notebook Windows como ponte e uma interface própria no Android e no iPhone.** O Ninho Monitor integra reprodução de vídeo, controle de movimento, eventos e automações, sem exigir outro aplicativo de câmera no iPhone.
 
-## Funcionalidades
+## O problema que o projeto resolve
 
-- Vídeo local no Android e acesso remoto por navegador/PWA.
-- Conversão de HEVC/G.711 para H.264/AAC no notebook, com distribuição HLS.
-- Controle por setas ou joystick, com parada ao soltar e limite por gesto.
-- Histórico privado de sete dias, com até 300 eventos e sem gravação permanente.
-- Modos Casa, Fora e Dormir, com preferências independentes de monitoramento e avisos.
-- Automações diárias por horário, executadas no notebook.
-- Web Push para movimento e avisos de energia, bateria e perda de imagem.
-- Acesso HTTPS com senha remota própria, sem encaminhar portas da câmera no roteador.
+Uma câmera que já funcionava na rede local precisava ser acessada pelo Android e pelo navegador do iPhone. O firmware respondia a parte do ONVIF, mas recusava consultas de capacidades e não seguia integralmente a negociação esperada pelo reprodutor. O vídeo HEVC também precisava chegar ao navegador em outro formato.
+
+A implementação separou essas responsabilidades: cliente Android para acesso local, ponte Go para integrar a câmera e uma PWA que recebe vídeo compatível, controles e eventos. O notebook mantém a análise e as rotinas mesmo com a página fechada.
+
+## Em uso
+
+![Visualizador web com vídeo sintético, modo Dormir e controles](docs/media/viewer-desktop.webp)
+
+| Celular | Histórico de eventos |
+| --- | --- |
+| ![Visualizador móvel com controles próximos da imagem](docs/media/viewer-mobile.webp) | ![Histórico de eventos na demonstração](docs/media/events-mobile.webp) |
+
+*Capturas da interface executando com uma fonte RTSP sintética. Nenhuma imagem doméstica, credencial ou dado real de monitoramento foi usado. O controle físico não é validado por essa demonstração.*
+
+## O que vale olhar no código
+
+| Desafio | Implementação | Evidência |
+| --- | --- | --- |
+| Firmware com negociação RTSP incompleta | Normalização de transporte restrita aos canais intercalados solicitados; preservação do RTP | [Ponte RTSP](bridge/rtsp.go) · [testes](bridge/rtsp_test.go) |
+| HEVC e áudio incompatíveis com o navegador | Conversão compartilhada no notebook para H.264/AAC e distribuição HLS | [Gerenciamento da transmissão](bridge/stream.go) |
+| Movimento que não pode ficar enfileirado | Última direção substitui a anterior; parada no cancelamento, perda de heartbeat e limite por gesto | [Controle PTZ](bridge/motion.go) · [testes](bridge/motion_test.go) |
+| Playlist que desaparece após inatividade | Renovação da visualização e recuperação limitada; pausa manual respeitada | [Reprodutor web](bridge/web/app.js) · [ciclo de vida](bridge/viewer_lifecycle_test.go) |
+| Alertas com o visualizador fechado | Análise de imagem no notebook, histórico limitado, Web Push e rotinas locais | [Eventos e push](bridge/alerts.go) · [modos e rotinas](bridge/home.go) |
+| Informações de câmera fora do navegador | Configuração local, armazenamento DPAPI e acesso remoto por sessão autenticada | [Servidor](bridge/server.go) · [integração Windows](bridge/platform_windows.go) |
+
+## Recursos implementados
+
+- **Vídeo:** acesso local no Android e remoto por navegador/PWA, com retomada após interrupções temporárias.
+- **Controle:** setas ou joystick, parada ao soltar e limite local de cinco segundos por gesto.
+- **Eventos:** histórico privado de sete dias, até 300 registros, filtros e exclusão, sem gravação permanente.
+- **Modos:** Casa, Fora e Dormir com sensibilidade e notificações configuráveis.
+- **Automações:** até oito rotinas diárias, executadas no horário do notebook.
+- **Continuidade:** avisos de energia, bateria baixa, perda de imagem e recuperação.
+- **iPhone:** instalação pela Tela de Início e Web Push em versões compatíveis do iOS.
 
 ## Arquitetura
 
 ```mermaid
 flowchart LR
-    Camera["Câmera RTSP / ONVIF"] --> Android["Aplicativo Android · Flutter"]
-    Camera --> Bridge["Ponte Windows · Go + FFmpeg"]
-    Bridge --> Tunnel["Túnel HTTPS"]
-    Tunnel --> Viewer["Navegador / PWA / Android remoto"]
-    Bridge --> Events["Análise de imagem · eventos · rotinas"]
-    Events --> Push["Web Push"]
-    Push --> Phone["Notificações no aparelho"]
+    Camera["Câmera · RTSP / ONVIF"] --> Android["Flutter · acesso local"]
+    Camera --> Bridge["Go · integração e autenticação"]
+    Bridge --> FFmpeg["FFmpeg · H.264 / AAC"]
+    FFmpeg --> HLS["HLS · transmissão compartilhada"]
+    HLS --> Tunnel["Túnel HTTPS"]
+    Tunnel --> Viewer["PWA / navegador / Android remoto"]
+    Viewer -->|"comandos autenticados"| Bridge
+    FFmpeg --> Events["Análise de imagem"]
+    Events --> History["Histórico e modos"]
+    History --> Push["Web Push"]
 ```
 
-A ponte compartilha uma conversão de vídeo entre os espectadores. A análise de imagem e as rotinas continuam quando o visualizador está fechado, desde que o notebook permaneça ligado e conectado.
+**Flutter/Dart** no aplicativo, **Go** na ponte, **FFmpeg** na conversão e **HTML/CSS/JavaScript** no visualizador. O acesso remoto usa Tailscale Funnel ou Cloudflare Quick Tunnel. [Veja os fluxos, limites e decisões de arquitetura →](docs/ARCHITECTURE.md)
 
-## Tecnologias
+## Rodar sem uma câmera física
 
-| Componente | Tecnologias |
-| --- | --- |
-| Aplicativo | Flutter, Dart, media_kit, armazenamento seguro |
-| Ponte | Go, FFmpeg, RTSP, ONVIF, SOAP |
-| Visualizador | HTML, CSS, JavaScript, HLS, service worker |
-| Notificações | Web Push, VAPID, mensagens criptografadas |
-| Acesso remoto | Tailscale Funnel ou túnel temporário Cloudflare |
-| Proteção | Sessões, CSRF, PBKDF2, DPAPI no Windows |
-
-## Código e versões
-
-| Diretório | Conteúdo |
-| --- | --- |
-| `apps/android/` | Aplicativo Flutter 2.5.0, build 17; projetos Android/iOS, testes e design |
-| `bridge/` | Ponte Windows 1.4.0, visualizador web incorporado e testes Go |
-| `website/` | Código do site de download e guias; binários de distribuição não incluídos |
-| `legacy/web-bridge/` | Protótipo JavaScript anterior, preservado como referência |
-| `docs/` | Restauração, diretrizes de design e inventário de integridade |
-
-O nome do projeto é **Ninho Monitor**. Alguns identificadores internos, nomes de executáveis e diretórios de dados foram mantidos para compatibilidade com instalações existentes. O backup e esta publicação não alteram os aplicativos instalados.
-
-## Executar e compilar
-
-Consulte [o guia de restauração](docs/RESTORE.md) para instalar as ferramentas, compilar Android e Windows e obter os componentes externos.
-
-Para testar a ponte, com Go >=1.26:
+A [demonstração reproduzível](docs/DEMO.md) usa uma fonte sintética local. Para os testes automatizados:
 
 ```sh
+# Ponte · Go >= 1.26
 cd bridge
 go test -race ./...
 ```
 
-Para preparar o aplicativo, com Flutter compatível com Dart >=3.10:
-
 ```sh
+# Aplicativo · Flutter 3.47.9 / Dart compatível
 cd apps/android
 flutter pub get
 flutter test
 ```
 
-O acesso atual no iPhone usa a PWA. Os arquivos iOS estão preservados, mas não há IPA distribuído neste repositório.
+Para compilar os aplicativos e configurar uma câmera real, consulte o [guia de restauração e instalação](docs/RESTORE.md).
 
-## Validação e limites
+## Qualidade e limites de validação
 
-O aplicativo passou em 121 testes Flutter. A ponte passou em 24 testes Go com detector de races e tem validações com câmera sintética no Chromium. Os casos incluem autenticação, negociação RTSP, interrupção de controle, eventos, rotinas, energia simulada e criptografia de push. Os detalhes e os limites estão em [bridge/VALIDACAO.md](bridge/VALIDACAO.md).
+**121 testes Flutter e 24 testes Go** passaram na preparação pública do projeto. O [workflow de CI](.github/workflows/ci.yml) executa as duas suítes; o badge no topo mostra o resultado real do GitHub Actions. A suíte Go usa o detector de races. Há verificações adicionais de navegador com vídeo sintético e de criptografia Web Push.
 
-Testes sintéticos não substituem a conferência da câmera, da bateria Windows ou da entrega de notificações em aparelhos reais. A análise identifica mudanças na imagem; não determina se uma criança acordou nem avalia sono, respiração ou saúde. Avisos podem atrasar. Se o notebook desligar ou ficar totalmente sem internet, a própria ponte não consegue enviar uma notificação.
+Os testes de laboratório não comprovam movimento físico, áudio audível, bateria Windows ou entrega de notificações em um iPhone real. Os detalhes estão em [PUBLIC-VALIDATION.md](docs/PUBLIC-VALIDATION.md) e [bridge/VALIDACAO.md](bridge/VALIDACAO.md).
 
-## Privacidade
+A análise identifica mudança na imagem, sem determinar se uma criança acordou ou avaliar sono, respiração ou saúde. A transmissão pode ter atraso. Se o notebook desligar ou perder toda a internet, ele não consegue enviar um alerta sobre a própria indisponibilidade.
 
-Este é um repositório público de código, com exemplos de rede fictícios. Senhas, configurações reais de câmera, assinaturas push, histórico de uso, endereços remotos pessoais e chaves de assinatura ficam fora do Git. O acesso ao código não concede acesso a uma câmera ou à hospedagem privada do proprietário.
+## Organização
 
-## Dependências
+```text
+apps/android/       Aplicativo Flutter 2.5.0 · build 17
+bridge/             Ponte Go 1.4.0 e visualizador web incorporado
+website/            Código do site de download e guias
+legacy/web-bridge/   Protótipo JavaScript anterior
+.github/workflows/  Testes automatizados
+docs/              Estudo de caso, arquitetura, demonstração e restauração
+```
 
-As licenças e os créditos das dependências foram preservados. O código próprio está sob a [licença MIT](LICENSE). Bibliotecas e componentes de terceiros mantêm suas próprias licenças.
+Os nomes visíveis da versão web usam Ninho Monitor. Identificadores internos e diretórios de dados legados permanecem para compatibilidade. Este repositório não publica atualizações nos aplicativos instalados nem expõe a hospedagem privada de download.
+
+## Próximos passos
+
+- Monitor independente da ponte, capaz de detectar um desligamento total do notebook.
+- Região de interesse para reduzir alertas de movimento fora da área acompanhada.
+- Mais câmeras e automações por dia da semana.
+
+Esses itens ainda não estão implementados. Sugestões e contribuições seguem o [guia de contribuição](CONTRIBUTING.md).
+
+## Licença e dependências
+
+O código próprio está sob a **[licença MIT](LICENSE)** — copyright de [alejandroBR17](https://github.com/alejandroBR17). Bibliotecas, componentes e arquivos de terceiros mantêm suas licenças originais; veja [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).

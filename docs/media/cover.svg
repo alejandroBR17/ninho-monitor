@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
+<title id="title">Ninho Monitor — uma câmera, três formas de acompanhar</title>
+<desc id="desc">Projeto de monitoramento pessoal com aplicativo Flutter, ponte Go no Windows e visualizador PWA.</desc>
+<rect width="1280" height="480" rx="24" fill="#101b1c"/>
+<g font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-weight="400">
+<text x="48" y="72" fill="#77e2c2" font-size="16" letter-spacing="4">ANDROID · WINDOWS · WEB</text>
+<text x="48" y="164" fill="#f2f7f5" font-size="72" font-weight="600" letter-spacing="-3">Ninho Monitor</text>
+<text x="48" y="228" fill="#b8c9c6" font-size="26">Uma câmera. Três formas de acompanhar.</text>
+<text x="48" y="300" fill="#b8c9c6" font-size="20">Vídeo remoto, eventos e automações</text>
+<text x="48" y="332" fill="#b8c9c6" font-size="20">com uma ponte executada no notebook.</text>
+<path d="M48 384h600" stroke="#354b47"/>
+<text x="48" y="432" fill="#77e2c2" font-size="18">Flutter / Dart</text><text x="240" y="432" fill="#77e2c2" font-size="18">Go / FFmpeg</text><text x="440" y="432" fill="#77e2c2" font-size="18">PWA / Web Push</text>
+<rect x="760" y="64" width="472" height="288" rx="24" fill="#172526"/>
+<rect x="792" y="96" width="408" height="208" rx="16" fill="#1c2c2d"/>
+<rect x="912" y="144" width="104" height="104" rx="20" fill="none" stroke="#77e2c2" stroke-width="8"/>
+<path d="m1036 176 40-24v88l-40-24z" fill="#77e2c2"/>
+<path d="M976 352v40M888 392h176" stroke="#354b47" stroke-width="8" stroke-linecap="round"/>
+<circle cx="792" cy="432" r="6" fill="#77e2c2"/>
+<text x="816" y="438" fill="#b8c9c6" font-size="17">RTSP / ONVIF → HLS → navegador</text>
+</g></svg>

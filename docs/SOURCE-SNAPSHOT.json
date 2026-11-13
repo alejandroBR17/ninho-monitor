@@ -704,7 +704,7 @@
     },
     {
       "path": "bridge/web/index.html",
-      "sha256": "d531d38c0b0c9157b5cb735ffd2d6fd26a44cd5b6866e9243885a795f17c6537"
+      "sha256": "025f9428b0910e66b08d662fc9a385605187d1cdefaf4caa98ce292627bfc6ff"
     },
     {
       "path": "bridge/web/setup.js",
@@ -716,15 +716,15 @@
     },
     {
       "path": "bridge/web/sw.js",
-      "sha256": "b5ef4397d0d8fd82a925204a334acbadcd6ac797bf13c90c7a1fb3bb308cc544"
+      "sha256": "bb074958346c6e756862b2e967941c9cd4b7dcf179634309ff0ac632cfa56cc8"
     },
     {
       "path": "bridge/web/setup.html",
-      "sha256": "8ff0beabe82dc2d9b4f6651e8301184244bbc66d91144473a7bf9c50204fc20a"
+      "sha256": "953f6c5d51ac5cc7b3395732ed21fd6e168bed189cbcd92bb1edaa955991c5c7"
     },
     {
       "path": "bridge/web/manifest.webmanifest",
-      "sha256": "dd96cf8a7c0f1f8ad20a8fb25476088606021513eb9624211e05399675e2d0a7"
+      "sha256": "c0c122549935be57a71a8b652beff8c7e9a7dcc3492b010c5c4f549992fa2cbb"
     },
     {
       "path": "bridge/web/style.css",
@@ -732,7 +732,7 @@
     },
     {
       "path": "bridge/web/app.js",
-      "sha256": "c0924fa8958ec57010db318d40abbabe405ebfd4420f36bb103fd0a1669dbb76"
+      "sha256": "c081ec33073e2127dd652f1fe7383c123b8c677b48a63f5ba8b2357d3c186075"
     },
     {
       "path": "bridge/web/icon180.png",
@@ -744,7 +744,7 @@
     },
     {
       "path": "bridge/web/alerts.js",
-      "sha256": "180fdc99bda5648797fc01305791f56e099eabcf504b31448f5686b96f28411d"
+      "sha256": "cce66f4c9ebf38c4c7813d8b5b8e7387b65d79e7218c573b2c3f672a96e16084"
     },
     {
       "path": "bridge/web/home.js",
@@ -895,7 +895,13 @@
       "website/dist/files/PONTE-LEIA-ME.txt",
       "website/dist/iphone.js",
       "apps/android/README.md",
-      "apps/android/pubspec.yaml"
-    ]
+      "apps/android/pubspec.yaml",
+      "bridge/web/index.html",
+      "bridge/web/sw.js",
+      "bridge/web/manifest.webmanifest",
+      "bridge/web/app.js",
+      "bridge/web/alerts.js"
+    ],
+    "portfolioChanges": "Identidade vis\u00edvel web, licen\u00e7a MIT autorizada, CI e documenta\u00e7\u00e3o de portf\u00f3lio. Bin\u00e1rios instalados e hospedagem privada inalterados."
   }
 }

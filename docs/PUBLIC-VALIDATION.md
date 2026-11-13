@@ -10,3 +10,11 @@ Código de portfólio preparado a partir do Android 2.5.0 (build 17) e da Ponte 
 - O site privado de download e as aplicações instaladas não foram modificados por esta publicação.
 
 Os testes foram executados em Linux. Não houve uma nova validação de hardware da câmera, bateria Windows, áudio real ou entrega push no iPhone. Consulte também bridge/VALIDACAO.md.
+
+
+## Apresentação de portfólio
+
+- Licença MIT escolhida pelo proprietário e reconhecida pelo GitHub.
+- CI real em GitHub Actions com as suítes Flutter e Go aprovadas: https://github.com/alejandroBR17/ninho-monitor/actions/runs/43440652179 .
+- Capturas reproduzíveis do visualizador executando com fonte RTSP sintética local, sem erros JavaScript; não houve conexão com uma câmera doméstica.
+- A identidade visível do visualizador web foi ajustada para Ninho Monitor; dados protegidos, cookies, eventos internos, identificadores Android e comandos PTZ foram preservados. Não foi publicada uma atualização nos aparelhos ou na hospedagem privada.

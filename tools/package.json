@@ -1,0 +1,10 @@
+{
+  "name": "ninho-monitor-portfolio-tools",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Capturas reproduzíveis da demonstração local com vídeo sintético.",
+  "scripts": {"capture": "node capture-portfolio.cjs"},
+  "engines": {"node": ">=20"},
+  "devDependencies": {"playwright": "1.62.1"}
+}
