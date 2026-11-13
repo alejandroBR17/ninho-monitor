@@ -1,0 +1,901 @@
+{
+  "android": "2.5.0+17",
+  "bridge": "1.4.0",
+  "files": [
+    {
+      "path": "apps/android/.gitignore",
+      "sha256": "e5e2c3848fd84203af846354dd40e52d235470cbf5444baa7dd9e166275861a6"
+    },
+    {
+      "path": "apps/android/AGENTS.md",
+      "sha256": "2d8bac45b4d60f028f85fcf90b3b149426641f28a33a56e54c0ffbed923ad464"
+    },
+    {
+      "path": "apps/android/THIRD_PARTY_NOTICES.md",
+      "sha256": "af70479046b7711cc184d7b19b10bcc1d64665b6015f3978dbb059eb3eb8bfd9"
+    },
+    {
+      "path": "apps/android/pubspec.lock",
+      "sha256": "4f84e631c2686986eb6a1bf0f5d28665a325fac437614c0a9596547b3ba7e61f"
+    },
+    {
+      "path": "apps/android/README.md",
+      "sha256": "9717dfae3df7dc843c2a6a17966e2b4ff3eb50e4724279381c0007c425141182"
+    },
+    {
+      "path": "apps/android/analysis_options.yaml",
+      "sha256": "92808b5cfd2ab6193a124faa355f0050d4e7c2fbe09c474a4f88f9f02e021711"
+    },
+    {
+      "path": "apps/android/.metadata",
+      "sha256": "47f4abc407e7df0bd28274b4390358256296af20e7ce986483da708324a40002"
+    },
+    {
+      "path": "apps/android/pubspec.yaml",
+      "sha256": "0c676b3eeeb2844e51c393f577d5aaf8c3bf5680b91adb24a58d7e1165342bde"
+    },
+    {
+      "path": "apps/android/test/session_overview_test.dart",
+      "sha256": "eff7df32fa44e9ca50b324667e37b523ebe9f0fe7d0dcef8bde3d4fdd6912757"
+    },
+    {
+      "path": "apps/android/test/discovery_screen_test.dart",
+      "sha256": "35fad96ea900fbd01bc2a00787a65d344fa829d8c320596e1b6067192d97060d"
+    },
+    {
+      "path": "apps/android/test/camera_test.dart",
+      "sha256": "5d5f451e9d6c364e86707922defb9369a28c815420f1b9df88731220b9afe6ce"
+    },
+    {
+      "path": "apps/android/test/video_actions_test.dart",
+      "sha256": "c853d202c7a90f65a448c48f7064f40f9397441a7891fe854279dbef9f4d466c"
+    },
+    {
+      "path": "apps/android/test/onvif_test.dart",
+      "sha256": "d0407edb6b282857ae82e9912822140d2625ca254ad07123f3f867223bf64433"
+    },
+    {
+      "path": "apps/android/test/design_test.dart",
+      "sha256": "c232e50a4866b9c8c9a78a7212a1949490cc7c5bad7a32c3732bd295bec22613"
+    },
+    {
+      "path": "apps/android/test/remote_access_test.dart",
+      "sha256": "9a50553866f00314066f728baec17f99d5ca9a4d8a6dd3f9c8cf8c4faf00b9b0"
+    },
+    {
+      "path": "apps/android/test/rtsp_probe_test.dart",
+      "sha256": "2a4abaf47afdb90e8308695d4875594c3f9afc30de4326c6dffb7fd50720d36f"
+    },
+    {
+      "path": "apps/android/test/ptz_motion_test.dart",
+      "sha256": "17a4bbc2086000216c6d37eed68363543df097413954cb92faa0ca91bd6699b4"
+    },
+    {
+      "path": "apps/android/test/onvif_compatibility_test.dart",
+      "sha256": "15b99b1e559ab5612e2e37fdfbe16aff4f82fc4e7fdbd72673ad1d672a437da1"
+    },
+    {
+      "path": "apps/android/test/onvif_zero_stop_test.dart",
+      "sha256": "0b8167a446441f1b988e8d45acf276e20c3547f2729179943399c33cc42b5b1b"
+    },
+    {
+      "path": "apps/android/test/discovery_test.dart",
+      "sha256": "288ad4b2dc6190bcaafc1039c3ff8860d7d4ab3e7ecbe03f39deac4e3b041151"
+    },
+    {
+      "path": "apps/android/test/rtsp_bridge_test.dart",
+      "sha256": "c3f2e5df7d178e39d39459c61f1df671ad3180c5e387441b7ef26ca095e3669e"
+    },
+    {
+      "path": "apps/android/test/diagnostics_test.dart",
+      "sha256": "db72cc927b1ee30b0809c40901c88b16a071f53d6cce214d8e18809c516d511e"
+    },
+    {
+      "path": "apps/android/test/onvif_services_test.dart",
+      "sha256": "34d38d03bbb87ae8050d282cf688cfbad1228c83304b72fd3d386467a33a8f91"
+    },
+    {
+      "path": "apps/android/test/viewing_controls_test.dart",
+      "sha256": "1735f5587dfd59ef473356b5645a537d2efd19f993a210826743e82b8f175e56"
+    },
+    {
+      "path": "apps/android/test/onvif_addressing_test.dart",
+      "sha256": "f85d8996dc9724ae9fca3972d8b66117b7aac8762123356a2b6dfe5abf121348"
+    },
+    {
+      "path": "apps/android/test/control_store_test.dart",
+      "sha256": "43281768cf75846ae0bde3c10355ded28b2a5e7fb237168ec0d3e0a38a536282"
+    },
+    {
+      "path": "apps/android/test/onvif_profile_test.dart",
+      "sha256": "69202bf48c7f651a0ccb4db60cbcfcef115d51e94bc9ae1ae237614a1273dc3c"
+    },
+    {
+      "path": "apps/android/test/camera_controls_test.dart",
+      "sha256": "0709789a6d78eab7676e580cb6a5b074a152a2233a9eaea079b08477b665658b"
+    },
+    {
+      "path": "apps/android/test/joystick_test.dart",
+      "sha256": "05edf7228cb28665cc782065dd36054e17fbada88e80b99e824995220d959f44"
+    },
+    {
+      "path": "apps/android/test/widget_test.dart",
+      "sha256": "0c65fa49933b64afedfb9444d2a9b6fd274237f241705c1fdbe043c92da29a9a"
+    },
+    {
+      "path": "apps/android/test/ptz_profile_ui_test.dart",
+      "sha256": "ab2d3f423f7eb24369f88e9ef09cb9c9bc82feb743a567a830011c27c11c9f05"
+    },
+    {
+      "path": "apps/android/test/daily_controls_test.dart",
+      "sha256": "859e9775814eb9904e5c00378c8024893535bc4bea5b8ae3152959a5a5a8fdde"
+    },
+    {
+      "path": "apps/android/test/onvif_manual_test.dart",
+      "sha256": "07f45365b5b6ae880f8468b1f8ecc4bd4d8cccd4eb959470502ba77a3f7a3201"
+    },
+    {
+      "path": "apps/android/test/connection_test.dart",
+      "sha256": "8cf5401991f49d799dfa7c05f7d2f75d511d0c0b5daae5135c129f3bfad69ab4"
+    },
+    {
+      "path": "apps/android/docs/VALIDACAO.md",
+      "sha256": "9d413742e22276cfe08d39c5f1af8f89c7a5d8cd91d94a65a675d01569925b0a"
+    },
+    {
+      "path": "apps/android/docs/IMAGEM-E-ATRASO.md",
+      "sha256": "7a0bed21ffc8e3e641809b8120fb3ae78892a7c3349b557595f7cb0052cc0699"
+    },
+    {
+      "path": "apps/android/docs/IPHONE-VLC.md",
+      "sha256": "4116cde210bfcff5fb6b7d7776452db9940da1d6083e0ea4c882f6b50eeeb540"
+    },
+    {
+      "path": "apps/android/docs/JOYSTICK.md",
+      "sha256": "4f1be2c631cb1d35730449183250d4b9f8092d428502ef8a8f9c31cd65cbacf0"
+    },
+    {
+      "path": "apps/android/docs/USO-DIARIO.md",
+      "sha256": "4d08cc9c53e075813d49e5abe771f2b8866e6120bc47a9ac247511cf9f50235c"
+    },
+    {
+      "path": "apps/android/docs/CONTROLE-MANUAL.md",
+      "sha256": "d44c613da8e6b660c584a84a6f337ccf338f55ade984749ed68d96869785e764"
+    },
+    {
+      "path": "apps/android/docs/WEB-PONTES.md",
+      "sha256": "ad29f23aeefc77d059e6c08aaf910941a9407910ca7b351fe9e2d4c53d1bb55e"
+    },
+    {
+      "path": "apps/android/docs/INVESTIGACAO-PTZ.md",
+      "sha256": "795fb59eb352918821cd5ec873a1d26b4e73b84afbb2c027ff12f9b51bba3771"
+    },
+    {
+      "path": "apps/android/docs/HISTORICO.md",
+      "sha256": "6f70ffbfbb70d3cf1e4ec34e2319c42fb81f7b3d42017982cb882751dea0583d"
+    },
+    {
+      "path": "apps/android/docs/app-icon.png",
+      "sha256": "1ef835f1521338f1fc0fbfe34722cead74336814231ecd2e0a12ffeee5f48d92"
+    },
+    {
+      "path": "apps/android/docs/DESIGN.md",
+      "sha256": "1c7ee74fa58eb01d8f1b8dfbbd9eb40fef2c85ad14fbe2418bddc0d9254b33e4"
+    },
+    {
+      "path": "apps/android/ios/Podfile",
+      "sha256": "b4aa8a8b559391480c38bfad67b699925fe922ab7aa08641aa50829ba884cdf1"
+    },
+    {
+      "path": "apps/android/ios/.gitignore",
+      "sha256": "37380775aeb2499662b7aca80f4ac4c95ae827c3ba2bfa179aa3e9af4812c623"
+    },
+    {
+      "path": "apps/android/integration_test/rtsp_test.dart",
+      "sha256": "afdb4529b8735ee4e93f14b7a8dd3ad019bf6f321293723ee35cd14c8299a0e9"
+    },
+    {
+      "path": "apps/android/android/.gitignore",
+      "sha256": "b027c9de1011765c015e5819bf857c0d75bfcd0886fb01721c091159012e50f1"
+    },
+    {
+      "path": "apps/android/android/settings.gradle.kts",
+      "sha256": "016759283e88ade6eba92910583feeef88b962839b957aa414296afd2952d122"
+    },
+    {
+      "path": "apps/android/android/gradlew.bat",
+      "sha256": "c13c6e91b9a517783976de213d46398c661ea9e17651376d7301e839eaedcc62"
+    },
+    {
+      "path": "apps/android/android/build.gradle.kts",
+      "sha256": "6a26dba2cb8dfba1e74f540b0d17a89d96c1301d3c3bfda14348bed257fddcba"
+    },
+    {
+      "path": "apps/android/android/gradlew",
+      "sha256": "ec56c02543666d92d9ac5ae7fcc48f88ce4de0deb8b7f9b39928ca46f68c1b2b"
+    },
+    {
+      "path": "apps/android/android/gradle.properties",
+      "sha256": "420f993f4b6e84873022b83502954cf8fed0d1c4f69039b8b4edebd185a4d262"
+    },
+    {
+      "path": "apps/android/scripts/broken_rtsp_fixture.py",
+      "sha256": "5c8f8aaefa3f0524a729c09feeccbe5132303246cd689744bfdf6f0e83fa65ba"
+    },
+    {
+      "path": "apps/android/scripts/mediamtx.yml",
+      "sha256": "d1408656a0de007690ae5798195a191692f146cf0c13a2209cf89fcdbdea9b1b"
+    },
+    {
+      "path": "apps/android/scripts/rtsp_fixture.py",
+      "sha256": "1317c36693113fd609168fe63ae4c41718e8dc7890cc970736d8c6690010ec18"
+    },
+    {
+      "path": "apps/android/tool/rtsp_bridge_probe.dart",
+      "sha256": "1b50f3dd1a337a71aa62e9ceeec1c5d2e575d9d1e69932a2d2ac81f736328fc9"
+    },
+    {
+      "path": "apps/android/tool/rtsp_probe.dart",
+      "sha256": "9840a33ed40936fc400551895d8e320ec403e3cfbbd4dac0557906d917a141ba"
+    },
+    {
+      "path": "apps/android/lib/camera.dart",
+      "sha256": "5e74b626d30c5f183fc18505fc2c4b4a448f14445e1da0ac5e0a5d13324d7f2b"
+    },
+    {
+      "path": "apps/android/lib/discovery_screen.dart",
+      "sha256": "dd18deb1e6254741cb239dd69f84b6cbea0f4aa18a4debd76288d95e2bf8068a"
+    },
+    {
+      "path": "apps/android/lib/onvif.dart",
+      "sha256": "20748c00b0ce4ab58b74c2c193dc4fe70e51b47579f57bbe56451b7a2e46c63f"
+    },
+    {
+      "path": "apps/android/lib/camera_controls.dart",
+      "sha256": "bc8496b37598b0f88dfba7492f6ad9395cb9fd2c03677f20932bef0424612c30"
+    },
+    {
+      "path": "apps/android/lib/storage.dart",
+      "sha256": "ced2d763a07681f1038032a6434bbada6ba5913c5263d47a9b3334c4292974c7"
+    },
+    {
+      "path": "apps/android/lib/control_store.dart",
+      "sha256": "cd2ffe8046cfac9d6295105feed94ff2231178774413e26b45562af06c17562a"
+    },
+    {
+      "path": "apps/android/lib/rtsp_bridge.dart",
+      "sha256": "0b2cc36760044c70cff6198b599ba2798ef5ad03c51a362d8fe7b3cee707a989"
+    },
+    {
+      "path": "apps/android/lib/connection.dart",
+      "sha256": "987f410cf7d35b2e315b3c01327c5cc650217eae68d721504e09eeb1b4a99203"
+    },
+    {
+      "path": "apps/android/lib/playback.dart",
+      "sha256": "7ed12608a07433db2646779069ad7ab642f3f0c44f9301d9d11404dc5e7c3952"
+    },
+    {
+      "path": "apps/android/lib/camera_joystick.dart",
+      "sha256": "d939f3fd34b1295062984910138d666c737ccc58350f73b48da370c4e12af2c8"
+    },
+    {
+      "path": "apps/android/lib/remote_access.dart",
+      "sha256": "2153acba53a9490195feb09d5a7dca856b52eaa0bc507207a1de7d2d9db280fb"
+    },
+    {
+      "path": "apps/android/lib/discovery.dart",
+      "sha256": "39ce1632ca636eba3d4c54c2a2ce772afa5f0979d287bfdaf2da9e09c5d06a38"
+    },
+    {
+      "path": "apps/android/lib/version.dart",
+      "sha256": "caf5bc9e4f9ecfd0bd4a16ee29939df759f43deef31ef0cc3912911a5cc28fbf"
+    },
+    {
+      "path": "apps/android/lib/design.dart",
+      "sha256": "65f42e2152810324ca8ccd5afcb6335a1637118462f95fc220d6fe4b00ffd4a5"
+    },
+    {
+      "path": "apps/android/lib/session_overview.dart",
+      "sha256": "6f03bbe102b4885cb0858374b334938c2ca374438d961154b35073df20e34ff8"
+    },
+    {
+      "path": "apps/android/lib/app.dart",
+      "sha256": "7f415174765a1b917dc2f5793eb5bd361a4139de75611469b998a2a5d9f17cf9"
+    },
+    {
+      "path": "apps/android/lib/video_actions.dart",
+      "sha256": "6b8c25e273be5ef282cf769e706f8c95f76b0cad1ec4e3a0f47c9694b8221748"
+    },
+    {
+      "path": "apps/android/lib/main.dart",
+      "sha256": "9e644697bb2902f5a9460ec253c8bd4c476d515a0d7a514f53603a335e16c46d"
+    },
+    {
+      "path": "apps/android/lib/native_session.dart",
+      "sha256": "27406616002def4ce545f1ae07e1c993fb2e12ca251548a85aa6edb7e98d8ef2"
+    },
+    {
+      "path": "apps/android/lib/ptz_motion.dart",
+      "sha256": "c36bca7aba009189ad9d20e06662b5bd0691f1d3cd01ae9ab77b00ae80e9f41f"
+    },
+    {
+      "path": "apps/android/lib/viewing_controls.dart",
+      "sha256": "a45258eef0539cc5e17bebc325cc452892674197d5a1924dcbc7416c4cf8f2d2"
+    },
+    {
+      "path": "apps/android/lib/playback_options.dart",
+      "sha256": "579f6646fae88ab2ed5f2a0db5246228c091fbf96cad7daff00d7d39bfcd5869"
+    },
+    {
+      "path": "apps/android/lib/daily_camera_controls.dart",
+      "sha256": "072cd8771be74f518864e1d0cffd3ce6ea03622781b327cb2332ab65fea16a1b"
+    },
+    {
+      "path": "apps/android/lib/rtsp_probe.dart",
+      "sha256": "93db9fdc1f20c234d112cf9fdcf5e97f6dab644f6b32c4a042a5bb7ba1107599"
+    },
+    {
+      "path": "apps/android/test/support/capture_ui.dart",
+      "sha256": "d881255d67fb826f26f46c1f5f7dfb5fa37fc01e5167b75212c5e3f1ed0d3d8d"
+    },
+    {
+      "path": "apps/android/ios/Flutter/AppFrameworkInfo.plist",
+      "sha256": "da12038f9b2688a8a26160fea2609fa8fcb11421448c109f09c0f573efe7698d"
+    },
+    {
+      "path": "apps/android/ios/Flutter/Debug.xcconfig",
+      "sha256": "690b8a8b1ae15ddd29b241429963e971bbc6720ab22f154cf8cf6b085b6d4925"
+    },
+    {
+      "path": "apps/android/ios/Flutter/Release.xcconfig",
+      "sha256": "75abb819a9de1e0e41c835e7307bc64a506cac25a9a5c0b0d8253fa1c3d5d422"
+    },
+    {
+      "path": "apps/android/ios/RunnerTests/RunnerTests.swift",
+      "sha256": "5e8f4908dacea6f29b2a790e4d38bf5fded69096063f9a27a2f21584d62b30c0"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcworkspace/contents.xcworkspacedata",
+      "sha256": "46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1"
+    },
+    {
+      "path": "apps/android/ios/Runner/Info.plist",
+      "sha256": "39a5445715c8c981a66c1519dff94f03919dfd7698d18d088203dadee3c255d1"
+    },
+    {
+      "path": "apps/android/ios/Runner/Runner.entitlements",
+      "sha256": "be2e6487801ddc7e2747910629a0e9acd9d0f96c789ac884364b6132cf025384"
+    },
+    {
+      "path": "apps/android/ios/Runner/Runner-Bridging-Header.h",
+      "sha256": "1a8d11d01d1cc92c650c9c9ed35299240052d4683a15a719a2315ef44185e074"
+    },
+    {
+      "path": "apps/android/ios/Runner/AppDelegate.swift",
+      "sha256": "451c6d9ba0a2b3ff43092ea349c60fa79a91f1158b915eb29dbdd357cb95d7b8"
+    },
+    {
+      "path": "apps/android/ios/Runner/SceneDelegate.swift",
+      "sha256": "add68b905971dedfcc0d0b5b7118030de5925ba8c081ad9815463699e3a444ad"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcodeproj/project.pbxproj",
+      "sha256": "7c599d9f547ee1b0e269e3d701ae965e95e66b59a643901cc8fe4a014ce46772"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+      "sha256": "11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f"
+    },
+    {
+      "path": "apps/android/ios/Runner/Base.lproj/Main.storyboard",
+      "sha256": "fd367b6c43006d61b730f674970dd48b9f662c8f2264e52ffc1558102a2c9f2d"
+    },
+    {
+      "path": "apps/android/ios/Runner/Base.lproj/LaunchScreen.storyboard",
+      "sha256": "857e61203b3deafb05766d8fcda898b86a7cb6f3d5e385ecc9926c4d698215e9"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png",
+      "sha256": "4663d170483854fa01f3811f78ba42cc0e9d1957682d0a38d8965f27d97e52bb"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png",
+      "sha256": "2c7fe87da961fa7dc4ef0f38e7b84d98a5745e481412902e65828847c97262d8"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png",
+      "sha256": "88fd53f84d730284b9f7d1871b484eac837986dc0a0abbb53b5e8afdc181a5d8"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png",
+      "sha256": "d9c9ae0630297ae8d4f806e042f5abe6927ee8bc3732a46ba20d8f926614f660"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png",
+      "sha256": "2685e5f262a0e9f89e8e5d95f6953cc7ca24f1725224e3b9cf4ab6cbf5308397"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png",
+      "sha256": "2c7fe87da961fa7dc4ef0f38e7b84d98a5745e481412902e65828847c97262d8"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "sha256": "a6c4d27273a6f2f81f7d2e54619e55407b0eaa9752f06866ad007c7d91f7d7cc"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png",
+      "sha256": "291d753f8412fc31414f1fff5bd7bc3c602642cd8b2e27299f2dff5c42e3774a"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "sha256": "3b1e214f466ffedff74baa5598ad5c4421130eea6bc8d57b8fe23435e8280ae4"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png",
+      "sha256": "69ad97378a0359c25756b1c61192965aac28411eb668865dce0d30f3a34e386f"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png",
+      "sha256": "22ff8e4c62c7c5c83d0a54cfbd4443d14f54479ab1d0ae61de79b79b04cf4c13"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png",
+      "sha256": "659d5b677ee88abee3dd5883d213e4e8f7a0abf352ca059b1afb6d87e6363a9d"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png",
+      "sha256": "f2503e90dda8ed38140a99049e379bd9eda5f15c3f7ec7e409cbcead7eb74af9"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png",
+      "sha256": "88fd53f84d730284b9f7d1871b484eac837986dc0a0abbb53b5e8afdc181a5d8"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png",
+      "sha256": "0e3c63b16905ef2e6691e038a683d0e1d2768f43c22f9da240eb1134967f1ea4"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png",
+      "sha256": "37f6b65ec09de43610cab71c6e21338ff00df47cde564a87be247a78047cd475"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png",
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json",
+      "sha256": "ccc7950fd5f5b82067c85f667940a9d59189151460761ece8098ca78daa19469"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png",
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md",
+      "sha256": "a985b626c4f7546a8ba392d135e9226c3547c8e2b46895f5f2bdf40d7b14ef9f"
+    },
+    {
+      "path": "apps/android/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png",
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+      "sha256": "9fbce429f56243561dd437a527136c9f9ed77165e3b271b923faf236cfcd0484"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542"
+    },
+    {
+      "path": "apps/android/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+      "sha256": "11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f"
+    },
+    {
+      "path": "apps/android/android/app/build.gradle",
+      "sha256": "9fa832e5a5523d05d68417c1c07d461918ef4503a2856e6eef9be9c713d6c9f1"
+    },
+    {
+      "path": "apps/android/android/app/src/debug/AndroidManifest.xml",
+      "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b"
+    },
+    {
+      "path": "apps/android/android/app/src/profile/AndroidManifest.xml",
+      "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b"
+    },
+    {
+      "path": "apps/android/android/app/src/main/AndroidManifest.xml",
+      "sha256": "486a52e3db7c053417675375a090b846e8dc666ff3114807e277b77f47058cc7"
+    },
+    {
+      "path": "apps/android/android/app/src/main/kotlin/com/jortanviewer/jortan_viewer/MainActivity.kt",
+      "sha256": "48a65ab983dfd77fe99088f3b44812765f3c963031aa79fe2f31592473a2478b"
+    },
+    {
+      "path": "apps/android/android/app/src/main/kotlin/com/jortanviewer/jortan_viewer/RemoteViewerActivity.kt",
+      "sha256": "053e87e008f37962a9659258f644694f47c28a55f52e04fd142a8b85d678f975"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/drawable-v21/launch_background.xml",
+      "sha256": "784b537d7799bb7e594b79501c4c65acb7c54be106316b9ab1d6463f794b56e1"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/drawable/launch_background.xml",
+      "sha256": "784b537d7799bb7e594b79501c4c65acb7c54be106316b9ab1d6463f794b56e1"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "sha256": "bf15188860e31b842a53ecfbfa9ae5588156f99c3abffb489421bae141c2e934"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": "43bd1720a57923d85400751f51301b0b02d811d25df5b3fbc0561bbb6fc345ee"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": "aa542b017a94470f09e1587ff8f836ec7d2a36f319324be857e7168da3e82ae5"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "sha256": "d0b1d9058e3ccea24432e269a7f08635831119c6a9be06794e70620a00880d9c"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/values/styles.xml",
+      "sha256": "73a320f1c2f7d6665cc60e47adc664da6196a71c005d729b9eb9206cabd74507"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "sha256": "ee7efa823eecceb4cc60ee325c4e3bbe91496dadee9c872482fcd50388626c9b"
+    },
+    {
+      "path": "apps/android/android/app/src/main/res/values-night/styles.xml",
+      "sha256": "343071fce70c0a5f8784ef9b1058d2e51ea91beef201f6b53c2d07206d6b0de3"
+    },
+    {
+      "path": "apps/android/android/gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "b690d26223576fe4e63889fad9a00df81945cb870b9476cc5a563152a1a88a74"
+    },
+    {
+      "path": "apps/android/android/gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "16caeaf66d57a0d1d2087fef6a97efa62de8da69afa5b908f40db35afc4342da"
+    },
+    {
+      "path": "bridge/fixed_tunnel_process_test.go",
+      "sha256": "563c72f23c3ef3fdddae970c1b35e7e2af35c40eeb1687aea4cc94df44d404a8"
+    },
+    {
+      "path": "bridge/health_windows.go",
+      "sha256": "451403674716db60c78be8492165f94a5ad10ba757186174f4623cf04b1ab31c"
+    },
+    {
+      "path": "bridge/stream.go",
+      "sha256": "c1fe24f6305d7177ca543d3dff13a8d25770afa43cc5be7cedc426dad8b40eb5"
+    },
+    {
+      "path": "bridge/onvif_test.go",
+      "sha256": "076db46ddda260c691a3bf34730b10e38a95fcb681b7f53eb15986ce9ba0057e"
+    },
+    {
+      "path": "bridge/VALIDACAO.md",
+      "sha256": "d7ad874b17730b52636fd3094c3ac7ee70a0143fc79ca2da9a24aded888b3fae"
+    },
+    {
+      "path": "bridge/health_other.go",
+      "sha256": "d45567787fa8ee9d080b76ef3d91987a991200587d41e1de842be3738538cd1e"
+    },
+    {
+      "path": "bridge/AGENTS.md",
+      "sha256": "d1ddf4e49ebb528e383eb3e46be9273c98f946a7f44dc670a96608833966f100"
+    },
+    {
+      "path": "bridge/fixed_tunnel.go",
+      "sha256": "5a4b10609918f389b7bb9356e093e8c82508dfde53406172f3edc97f2d09126e"
+    },
+    {
+      "path": "bridge/home_test.go",
+      "sha256": "6c1be10ff33facbe3c5e65f1a40743373dc41cdf2c6e770f77a7c205f93d4840"
+    },
+    {
+      "path": "bridge/rtsp.go",
+      "sha256": "63cec652ee2fd57d9cbe473e2a84fddcd45b24147a1b003afbdb9a85e38d4d6e"
+    },
+    {
+      "path": "bridge/viewer_lifecycle_test.go",
+      "sha256": "37efc6e3861d98da8b6d2c6a0c1a0a8109306bdadb4bad7f78fceffe3b82eeff"
+    },
+    {
+      "path": "bridge/platform_other.go",
+      "sha256": "a9aebe796f6a5a76527014b7035efaf0726e19d77d337845f6db7cee71ba4593"
+    },
+    {
+      "path": "bridge/server_test.go",
+      "sha256": "a3ac442ecec149ce0e8a37c6541c21b6503bb83dfc2a94b3c94bce8d52818bf1"
+    },
+    {
+      "path": "bridge/config.go",
+      "sha256": "2c8ecb2cdde2e89ab2e8f9d212e252ad8713d155b46e76b8c57e098f1cffc620"
+    },
+    {
+      "path": "bridge/fixed_tunnel_test.go",
+      "sha256": "d21b01f26850359973768cf57813c283875cdbfbef3578a8f5bc2a9ccdab1c5d"
+    },
+    {
+      "path": "bridge/onvif.go",
+      "sha256": "54cf8471678ecd332751c997d549b6dd0475738c87799e36b254452c854dd099"
+    },
+    {
+      "path": "bridge/platform_windows.go",
+      "sha256": "a47e3bf12b4d532138469eb05f680effe812f0d4a8e4577ad21f20a026264e8a"
+    },
+    {
+      "path": "bridge/rtsp_test.go",
+      "sha256": "81c86b04e2936c6a36b637c5936ec72edb3c5ff84d621fde1151296ef4193955"
+    },
+    {
+      "path": "bridge/home.go",
+      "sha256": "8fe30f2a9957f24a8bcc06229c6782419c15f90f50f174da2ffc3cd8415edfa6"
+    },
+    {
+      "path": "bridge/COMPONENTES.json",
+      "sha256": "bb1bb05f4895e6a5225a26454b354b267e62c87b36c88e55aa912bf9553235f4"
+    },
+    {
+      "path": "bridge/motion.go",
+      "sha256": "ab0adce57c7d07f1d93b37897691df1b2ed30005b78c4467583018ca4d3d4ce2"
+    },
+    {
+      "path": "bridge/alerts_test.go",
+      "sha256": "f7f7fe25828e7e8e57e616bf67cc67e5f1c4d36f6f8878a2248e0276b89332f1"
+    },
+    {
+      "path": "bridge/main.go",
+      "sha256": "a6deb9b15c5575ddae51edb0b59a6e485a3c781bb89a5e71e5feee7e8a633448"
+    },
+    {
+      "path": "bridge/README.md",
+      "sha256": "c9e53d03659f87de519a91d16fce49553709a378232cc0999cde885a2df9e97f"
+    },
+    {
+      "path": "bridge/go.sum",
+      "sha256": "6e465404a9127200370cb5cb8f6ef07b979fbb63871e9ce17ae063f3c47fd8b8"
+    },
+    {
+      "path": "bridge/go.mod",
+      "sha256": "c9a93a8ec6494530f4b6a7b651b172a5bbf516cc5622c36e26092f889407db2f"
+    },
+    {
+      "path": "bridge/ENDERECO-FIXO.md",
+      "sha256": "df7fe927ff35561d49a273e1794e7ac9fd28e6612f6b1faa00d4f91e7be1a0dd"
+    },
+    {
+      "path": "bridge/fixes_test.go",
+      "sha256": "899d5d07d0afcb2f7ddebed55c0a38391e0bf37f96d4b543147bcfcdfd518f31"
+    },
+    {
+      "path": "bridge/server.go",
+      "sha256": "af3e52c0f2a4c8a08117230b15bfd8ff389cd70c68eb82e01baddbbb346ff094"
+    },
+    {
+      "path": "bridge/alerts.go",
+      "sha256": "7132e3e775ea3c39497c1e558f4c23e2c9d40a41f45b900960feb69f45a9d5b0"
+    },
+    {
+      "path": "bridge/motion_test.go",
+      "sha256": "63db8b656849f8845c5836f1c42b6aeda8a580900a84fddc7091e853fb91753f"
+    },
+    {
+      "path": "bridge/DESIGN.md",
+      "sha256": "1c7ee74fa58eb01d8f1b8dfbbd9eb40fef2c85ad14fbe2418bddc0d9254b33e4"
+    },
+    {
+      "path": "bridge/health.go",
+      "sha256": "37fede9d1260b369c4a1f90caf568ab4bdd651d40a73aa6993d29d3bc2c9ba27"
+    },
+    {
+      "path": "bridge/alerts_api.go",
+      "sha256": "ae6006d41dc156bfbde34bc314840c32462c612d189104b17470d6ae5ec7ae96"
+    },
+    {
+      "path": "bridge/web/index.html",
+      "sha256": "d531d38c0b0c9157b5cb735ffd2d6fd26a44cd5b6866e9243885a795f17c6537"
+    },
+    {
+      "path": "bridge/web/setup.js",
+      "sha256": "bd890943a96c4903198d29803eaee155bf0e35c7cb5fa373138e4c719e998790"
+    },
+    {
+      "path": "bridge/web/viewer-layout.js",
+      "sha256": "75454486f38b51a4f05064babe0eae13362cd60c67e51e1466699ad14ed8ba74"
+    },
+    {
+      "path": "bridge/web/sw.js",
+      "sha256": "b5ef4397d0d8fd82a925204a334acbadcd6ac797bf13c90c7a1fb3bb308cc544"
+    },
+    {
+      "path": "bridge/web/setup.html",
+      "sha256": "8ff0beabe82dc2d9b4f6651e8301184244bbc66d91144473a7bf9c50204fc20a"
+    },
+    {
+      "path": "bridge/web/manifest.webmanifest",
+      "sha256": "dd96cf8a7c0f1f8ad20a8fb25476088606021513eb9624211e05399675e2d0a7"
+    },
+    {
+      "path": "bridge/web/style.css",
+      "sha256": "3aa11634fc8814de6e4db6973550a542cc3528d05733437f893b801fc88491e0"
+    },
+    {
+      "path": "bridge/web/app.js",
+      "sha256": "c0924fa8958ec57010db318d40abbabe405ebfd4420f36bb103fd0a1669dbb76"
+    },
+    {
+      "path": "bridge/web/icon180.png",
+      "sha256": "fea05542e6d6070029277695844e040eb28fd5dd86837e0b9f133a7f7a5c9fb6"
+    },
+    {
+      "path": "bridge/web/icon.svg",
+      "sha256": "7758aa9a50635d8b6928b11a3a2a212acd977dc025c3ce09884b4b5f9e6819e9"
+    },
+    {
+      "path": "bridge/web/alerts.js",
+      "sha256": "180fdc99bda5648797fc01305791f56e099eabcf504b31448f5686b96f28411d"
+    },
+    {
+      "path": "bridge/web/home.js",
+      "sha256": "74470c5effe6536dde38b45681c03265b9973fcd75946163aaf312d62faa2e06"
+    },
+    {
+      "path": "bridge/licenses/JWT-LICENSE.txt",
+      "sha256": "fe26ca41577b9b2b4448050a24b25e5753af66b5d5945d5d36094e7790bfcb2f"
+    },
+    {
+      "path": "bridge/licenses/WEBPUSH-LICENSE.txt",
+      "sha256": "0c065563a77bd48b5ba9094cb935b3f8cc7c6b026130986dd028202c4210e46e"
+    },
+    {
+      "path": "bridge/licenses/X-CRYPTO-LICENSE.txt",
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "bridge/web/vendor/HLS-LICENSE.txt",
+      "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db"
+    },
+    {
+      "path": "bridge/web/vendor/hls.min.js",
+      "sha256": "7c47cd97d7a6e7b98d9623dd8ed9a6d45af4be4085e0c2001cd7175c2b4cfb07"
+    },
+    {
+      "path": "legacy/web-bridge/server.mjs",
+      "sha256": "0a22f00677c63af250de490f7d3ed2d65b426dd1d692f5aea01f856ad0da1c6e"
+    },
+    {
+      "path": "legacy/web-bridge/rtsp.mjs",
+      "sha256": "5fcf1c41539a92769d22cdcd3c7ef34d44e665de2e5500af0092576052291d7f"
+    },
+    {
+      "path": "legacy/web-bridge/discovery.mjs",
+      "sha256": "eba225b68578a2a23f58bcdf3fb2501518a24a1b21748999222084334c6d5d58"
+    },
+    {
+      "path": "legacy/web-bridge/test/bridge.test.mjs",
+      "sha256": "8dec0c6047518d7f48bc951a03a134060f82ceccfa5cb0b8917839651d7d5708"
+    },
+    {
+      "path": "legacy/web-bridge/public/index.html",
+      "sha256": "0b6a1a9e0eab76cdbca92b495da930ae4d8b1c892985f5679051949065e7eb30"
+    },
+    {
+      "path": "legacy/web-bridge/public/style.css",
+      "sha256": "e6212c5de507983f4c577e5afac46c4bc8c5c66ada4833681e454ac5b8fa2124"
+    },
+    {
+      "path": "legacy/web-bridge/public/app.js",
+      "sha256": "ad39a47a5faba4778f1f329bcfffa16251075099b2c9d45353cc8ed004e37f49"
+    },
+    {
+      "path": "website/AGENTS.md",
+      "sha256": "efeabb29f6c6bebcb499d2b78be59eeef2a697f62024fe3a6a3b5beeca31caf0"
+    },
+    {
+      "path": "website/DESIGN.md",
+      "sha256": "1c7ee74fa58eb01d8f1b8dfbbd9eb40fef2c85ad14fbe2418bddc0d9254b33e4"
+    },
+    {
+      "path": "website/dist/index.html",
+      "sha256": "6f4e44ed84f30a43e42d6ccd23f661edec36f60b48c74a38a1cdba6902f7630d"
+    },
+    {
+      "path": "website/dist/iphone.html",
+      "sha256": "5e369952cb46e033325e0929940e53c0e322682a6d7342d16fac184e58d83784"
+    },
+    {
+      "path": "website/dist/manifest.json",
+      "sha256": "1f1f5b837de635a56b1d3580a8963b2bc891ef34df2852cc3a34496cece93539"
+    },
+    {
+      "path": "website/dist/style.css",
+      "sha256": "2f025032b83ab4b20aae8598084bb8ce6b882149fe6cde8c78f48e9ecc7a7b4d"
+    },
+    {
+      "path": "website/dist/bridge-download.js",
+      "sha256": "b4c765793b31f706f173c31af5c201b51e060a940e24bd492c0ff351d426318d"
+    },
+    {
+      "path": "website/dist/bridge.html",
+      "sha256": "17373a6777af889d7e16c36146cef7b850b6c9af79bc490dcb9e3d13415da4ac"
+    },
+    {
+      "path": "website/dist/bridge-manifest.json",
+      "sha256": "f5e8ffa37934b30fdb090dbf1bff0d6456dc1d8ade0ea0949f08ec66f4b4b82e"
+    },
+    {
+      "path": "website/dist/iphone.js",
+      "sha256": "02889616921660736c4325e8ed2c0121942c9996d21de857fca06b4fa5e9038d"
+    },
+    {
+      "path": "website/dist/download.js",
+      "sha256": "02b4b04b61be39b363dec878dfe75aa8af4a9f93c8531aab61530d193b67171f"
+    },
+    {
+      "path": "website/dist/files/COMO-INSTALAR.txt",
+      "sha256": "dae32f130f50b5f3157f8363f241437b53ba2a590ba54a48ccbd28d8fec0d423"
+    },
+    {
+      "path": "website/dist/files/PONTE-LEIA-ME.txt",
+      "sha256": "059e41146a005e7e0be4d6c566b2fddde1b66fe4b19a588a6bd1082fade26fa3"
+    },
+    {
+      "path": "website/dist/files/ENDERECO-FIXO.txt",
+      "sha256": "df7fe927ff35561d49a273e1794e7ac9fd28e6612f6b1faa00d4f91e7be1a0dd"
+    },
+    {
+      "path": "bridge/INICIAR-PONTE.cmd",
+      "sha256": "5b6b5e719752c96125f7ddc9fb2354dbe050bfd0fe116409e8c1e0b1d6f95766"
+    },
+    {
+      "path": "bridge/INICIAR-COM-ENDERECO-FIXO.cmd",
+      "sha256": "3d4e698e8d8f094113dff172d82f75e5006fd41c53493e43700c3d4566285855"
+    }
+  ],
+  "generatedFilesNotTracked": [
+    "apps/android/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+    "apps/android/ios/Runner/GeneratedPluginRegistrant.h",
+    "apps/android/ios/Runner/GeneratedPluginRegistrant.m"
+  ],
+  "publicPreparation": {
+    "description": "C\u00f3digo autorizado para portf\u00f3lio; exemplos de IP fict\u00edcios e contato VAPID p\u00fablico. Identificadores de compatibilidade preservados.",
+    "sanitizedFiles": [
+      "apps/android/docs/HISTORICO.md",
+      "apps/android/docs/INVESTIGACAO-PTZ.md",
+      "apps/android/docs/IPHONE-VLC.md",
+      "apps/android/docs/WEB-PONTES.md",
+      "apps/android/lib/app.dart",
+      "apps/android/lib/camera.dart",
+      "apps/android/test/camera_test.dart",
+      "apps/android/test/connection_test.dart",
+      "apps/android/test/control_store_test.dart",
+      "apps/android/test/discovery_screen_test.dart",
+      "apps/android/test/discovery_test.dart",
+      "apps/android/test/onvif_test.dart",
+      "apps/android/test/ptz_profile_ui_test.dart",
+      "apps/android/test/rtsp_bridge_test.dart",
+      "apps/android/test/widget_test.dart",
+      "bridge/README.md",
+      "bridge/alerts.go",
+      "bridge/fixes_test.go",
+      "bridge/web/setup.html",
+      "legacy/web-bridge/public/index.html",
+      "legacy/web-bridge/test/bridge.test.mjs",
+      "website/dist/files/PONTE-LEIA-ME.txt",
+      "website/dist/iphone.js",
+      "apps/android/README.md",
+      "apps/android/pubspec.yaml"
+    ]
+  }
+}

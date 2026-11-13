@@ -1,0 +1,11 @@
+# Controle para uso diário — 2.2.0 / build 14
+
+O usuário confirmou em 06/11/2026 movimento físico no Jortan 2.1, com pausas, e pediu encerrar o fluxo experimental. Seus dois diagnósticos mostram ContinuousMoveResponse no formato padrão ONVIF/WS-Addressing 2005/08 e parada por velocidade zero no serviço anunciado /onvif/deviceio_service, porta 5000. Isso é evidência da câmera do projeto. Não comprova todas as câmeras da marca ou obediência física exata ao timeout.
+
+A tela ao vivo agora usa DailyCameraControls. Conectar vídeo prepara o controle: carrega preferência protegida, reconfirma uma parada e só então libera movimento por pressão. Na primeira configuração usa GetCapabilities/GetServices/GetProfiles e prioriza o endpoint PTZ anunciado. Não chama GetConfigurationOptions/GetNode/GetNodes. Não envia velocidade diferente de zero nessa preparação. Formato padrão/zero é tentado primeiro; alternativas anteriores ficam disponíveis para recuperar compatibilidade. Perfil/endpoint/formato aceitos são salvos, sem duplicar a senha. A preferência é validada para o mesmo host, usuário e URL ONVIF, rejeitando credenciais, query ou fragmento no endereço.
+
+Segurar renova movimento a 0,1 com timeout solicitado PT2S e limite local de 5 segundos. Soltar, cancelar gesto, perder vídeo, sair da aba ou ir para segundo plano pede parada após o último movimento pendente. Não há fila concorrente de movimentos nem repetição automática de movimento recusado. Retornar prepara a parada de novo. Um erro mantém setas desativadas e oferece Reconectar controle. A seção Configurações do controle permite refazer descoberta ou selecionar outro perfil/serviço.
+
+A versão 2.2 altera o fluxo de preparação e distribuição; conserva transporte, decodificação, áudio, captura e o protocolo de movimento que funcionou na 2.1. Não promete eliminar as pausas relatadas. O diagnóstico usa movimentoVerificadoAutomaticamente=false, pois o app não tem sensor que confirme o giro; a confirmação do usuário permanece registrada nesta documentação. Não há marcação de teste nem ativação experimental na tela de uso diário.
+
+Edição Android release para distribuição pessoal, mesma assinatura para atualizar. Nenhuma configuração WAN foi alterada. Histórico do experimento em CONTROLE-MANUAL.md e HISTORICO.md.

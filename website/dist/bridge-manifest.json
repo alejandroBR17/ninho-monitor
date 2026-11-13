@@ -1,0 +1,28 @@
+{
+  "version": "1.4.0",
+  "filename": "Jortan-Ponte-Windows-x64.zip",
+  "size": 61186153,
+  "sha256": "55aa2c30fd7e961576c3f9257a6b5171a697b2a3226eef1ad67f6c770192c686",
+  "parts": [
+    {
+      "url": "files/bridge-00-2b24f10e8408.bin",
+      "size": 16777216,
+      "sha256": "2b24f10e840800f25c440a0776c46283a4f3f23fbc65dcd0ef93452293a755b7"
+    },
+    {
+      "url": "files/bridge-01-4bf36a456a5b.bin",
+      "size": 16777216,
+      "sha256": "4bf36a456a5b421a395a05035c15e4a8194ba2fe351fbcffc8282dc5e7f39975"
+    },
+    {
+      "url": "files/bridge-02-c6fb723b2ac3.bin",
+      "size": 16777216,
+      "sha256": "c6fb723b2ac368af84791698aba8acfc846788ad81fa54d6f1c48269e978f38c"
+    },
+    {
+      "url": "files/bridge-03-56ebc8647a29.bin",
+      "size": 10854505,
+      "sha256": "56ebc8647a29a76e33dbb854adee65f92ab617debdca860c33747d21fb29534b"
+    }
+  ]
+}

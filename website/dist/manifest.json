@@ -1,0 +1,20 @@
+{
+  "version": "2.5.0",
+  "buildType": "release",
+  "build": 17,
+  "filename": "Jortan-Viewer-2.5.0-Android-arm64.apk",
+  "size": 32339758,
+  "sha256": "9f266afae67dcd93a176b53667bdfcf29ac5b9c84142e30af6e05016ebf3ab03",
+  "parts": [
+    {
+      "url": "files/installer-00-2ed2065a2505.bin",
+      "size": 16777216,
+      "sha256": "2ed2065a250588fc9fec73303c21b15706beedbcb1eae6fa9a5aa31936651366"
+    },
+    {
+      "url": "files/installer-01-28f217282ec7.bin",
+      "size": 15562542,
+      "sha256": "28f217282ec720043211ea1c2d2abc41c68200a0e32fd86067609c162444b8d6"
+    }
+  ]
+}

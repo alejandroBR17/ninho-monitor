@@ -1,0 +1,59 @@
+{
+  "bridge": {
+    "version": "1.4.0",
+    "go": "1.27.4",
+    "sourceIncluded": true,
+    "minimumGo": "1.26.0"
+  },
+  "ffmpeg": {
+    "version": "9.0.2 essentials",
+    "upstream": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
+    "source": "https://git.ffmpeg.org/ffmpeg.git",
+    "buildRecipe": "https://github.com/GyanD/codexffmpeg"
+  },
+  "cloudflared": {
+    "upstream": "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe",
+    "source": "https://github.com/cloudflare/cloudflared"
+  },
+  "hlsjs": {
+    "version": "1.6.13",
+    "source": "https://github.com/video-dev/hls.js/tree/v1.6.13"
+  },
+  "files": {
+    "JortanPonte.exe": {
+      "sha256": "59245d5bfd51fadad5a6a9ecced8d9c8463a2a2ad4871bde93b46b698bb12c47",
+      "bytes": 9046528
+    },
+    "cloudflared.exe": {
+      "sha256": "d5c1d82031da6253dcdcff64c944cd0fe063016edeb2e4fd088075fc9bd52d0a",
+      "bytes": 55397592
+    },
+    "ffmpeg.exe": {
+      "sha256": "3256173f3f8bffd7df12227c68adf68025edb1832273a9530688a7bb1ed8edec",
+      "bytes": 105423872
+    }
+  },
+  "tailscale": {
+    "bundled": false,
+    "optional": true,
+    "download": "https://tailscale.com/download/windows",
+    "purpose": "Funnel para endere\u00e7o fixo; instala\u00e7\u00e3o e conta do usu\u00e1rio no notebook"
+  },
+  "goModules": [
+    {
+      "module": "github.com/SherClockHolmes/webpush-go",
+      "version": "1.4.0",
+      "license": "WEBPUSH-LICENSE.txt"
+    },
+    {
+      "module": "github.com/golang-jwt/jwt/v5",
+      "version": "5.3.1",
+      "license": "JWT-LICENSE.txt"
+    },
+    {
+      "module": "golang.org/x/crypto",
+      "version": "0.59.0",
+      "license": "X-CRYPTO-LICENSE.txt"
+    }
+  ]
+}

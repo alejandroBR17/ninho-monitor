@@ -1,0 +1,25 @@
+JORTAN VIEWER 2.5.0 — ANDROID ARM64 — USO DIÁRIO
+
+Instale por cima da versão anterior. A assinatura é a mesma; a senha e a configuração são preservadas.
+
+1. Abra o aplicativo no Wi-Fi da câmera e toque em Conectar à câmera.
+2. O painel prepara o controle automaticamente. Na primeira vez pode levar alguns segundos para buscar e guardar os perfis.
+3. No painel Controle da câmera escolha Setas ou Joystick. A preferência fica salva. Segure uma seta ou arraste o joystick para mover; solte ou volte ao centro para parar. Cada pressão dura no máximo 5 segundos; solte e pressione novamente para continuar. O botão Parar está disponível.
+4. Não é necessário ativar teste ou escolher um modo experimental. Ao reconectar, o app reutiliza a configuração salva e confirma a parada antes de liberar movimento.
+5. Se o controle falhar, use Reconectar controle. Em Configurações do controle, Buscar configuração novamente refaz a descoberta.
+
+Mais detalhes usa /onvif1; Mais fluido usa /onvif2. O fluxo /onvif2 da câmera não anuncia áudio. Compartilhar imagem abre o menu do celular com um quadro PNG. Nenhuma imagem é enviada automaticamente.
+
+Diagnóstico > Copiar resumo curto ou Compartilhar arquivo continua disponível. Credenciais são removidas; os relatórios ainda incluem IP e dados técnicos. Não envie senha.
+
+O usuário confirmou movimento no Jortan 2.1, com pausas. A 2.2 conserva o protocolo aceito, em um fluxo de uso diário e APK release. Não promete eliminar as pausas ou medir automaticamente giro físico. Sincronia audível, atraso ponta a ponta e novo fluxo no aparelho continuam sujeitos ao uso real.
+
+Android 7 ou superior, ARM64. Distribuição pessoal no site privado. Sem instalador iOS próprio: o código Xcode está no ZIP, mas gerar e assinar IPA requer Mac/Xcode e assinatura Apple. O guia VLC para iPhone permanece no site.
+
+Código-fonte completo, regras de interface e evidências estão no ZIP: AGENTS.md, docs/DESIGN.md, docs/USO-DIARIO.md e docs/VALIDACAO.md. Chaves de assinatura e credenciais não fazem parte do arquivo.
+
+AÇÕES DE VÍDEO: Tela cheia tem um único botão de expansão/saída. O outro ícone parecido era redefinição de zoom; agora aparece como Redefinir zoom, com ícone de reinício, e só fica habilitado se houver zoom aplicado.
+
+OTIMIZAÇÕES 2.3: renovação após a resposta, sem esperar outro tick de timer; apenas a direção mais recente do joystick é enviada. Redesenhos de áudio repetido evitados e filtro de logs reutilizado. A câmera ainda pode apresentar pausas; não há ganho de latência física medido. Novo joystick e tela cheia nativa precisam de conferência no aparelho.
+
+ACESSO REMOTO 2.5: baixe a ponte Windows pelo link Ponte Windows no site. Extraia tudo e execute INICIAR-PONTE.cmd no notebook, informe as senhas apenas no painel local e copie a URL HTTPS exibida. No Android, abra a aba Remoto e cole a URL. No iPhone, abra a URL no Safari e use Compartilhar > Adicionar à Tela de Início. Use a senha REMOTA para entrar. O endereço pode mudar ao reiniciar a ponte; mantenha notebook ligado e a janela aberta. O usuário confirmou a ponte 1.0.1; a nova interface foi verificada com fontes simuladas, sem novo teste físico neste ambiente.

@@ -1,0 +1,25 @@
+name: jortan_viewer
+description: Cliente Android do Ninho Monitor para câmeras RTSP e ONVIF.
+publish_to: none
+version: 2.5.0+17
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  xml: ^7.0.1
+  crypto: ^3.0.7
+  media_kit: ^1.2.6
+  media_kit_video: ^2.0.1
+  media_kit_libs_video: ^1.0.7
+  flutter_secure_storage: ^11.2.0
+  share_plus: ^13.3.1
+  wakelock_plus: ^1.4.0
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
