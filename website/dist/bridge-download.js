@@ -19,7 +19,7 @@ prepare.addEventListener('click', async () => {
   save.hidden = true;
   status.textContent = 'Mantenha esta página aberta enquanto o arquivo é preparado.';
   try {
-    const response = await fetch('bridge-manifest.json?v=1.5.0', {signal: controller.signal, cache: 'no-store'});
+    const response = await fetch('bridge-manifest.json?v=1.5.1', {signal: controller.signal, cache: 'no-store'});
     if (!response.ok) throw new Error('Não foi possível obter as informações do pacote Windows.');
     const manifest = await response.json();
     const pieces = [];

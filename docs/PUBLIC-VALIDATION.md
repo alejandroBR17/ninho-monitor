@@ -30,3 +30,12 @@ A apresentação usa uma cena doméstica fictícia gerada por IA, publicada por 
 24 testes Go com detector de races aprovados. Reprodução, histórico, rotinas, filtros, desconexão, logout e tela cheia em retrato e paisagem verificados no Chromium com fonte sintética. A tipografia Manrope é local e os arquivos de licença OFL acompanham o código. Nenhum dado de produção foi usado nas capturas.
 
 O site de download foi redesenhado com a mesma marca. Links, contraste, manifesto e reconstrução dos downloads foram verificados. A prévia gerenciada do Sites não estava disponível; a página hospedada não foi validada visualmente neste ambiente.
+
+
+## Reconexão e diagnóstico — Ponte 1.5.1
+
+Uma playlist existente deixou de ser tratada como vídeo ativo quando fica sem atualização por mais de 25 segundos. Conectar reaproveita o conversor saudável e substitui um processo travado; a preparação inicial mantém sua tolerância de tempo. Erros recebidos durante a conexão ficam pendentes para recuperação, em vez de serem ignorados. Uma pausa do sistema durante permissões deixa de ser confundida com o botão Pausar.
+
+Copiar diagnóstico fica junto ao vídeo e no rodapé, inclusive sem login. Se a ponte não responder, o relatório inclui a última consulta com horário e até 40 eventos locais, sem senha, endereço, token ou assinatura push. Os eventos ficam apenas na memória da página; uma recarga limpa essa sequência. O teste de push tem prazo de rede maior que o prazo de envio no servidor.
+
+Validação em Linux: 25 testes Go com detector de races; Chromium com RTSP sintético, mudanças de perfis/avisos, envio de teste recusado simulado, ocultar/retornar à página, pausa explícita preservada, erro durante conexão, playlist 404, cópia de diagnóstico offline e sem login, telas de 320/390/844 px. Um FFmpeg de teste foi suspenso de propósito: a ponte o substituiu e o vídeo voltou sem recarregar a aba. Não houve reprodução da falha no iPhone real nem confirmação de sua causa específica; entrega real de push, Windows/DPAPI e câmera física não foram validados neste reparo.

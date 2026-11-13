@@ -4,7 +4,9 @@ import (
 	"bufio"
 	"net"
 	"net/textproto"
+	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 	"testing"
 	"time"
@@ -77,5 +79,49 @@ func TestStatusDuringSlowProcessLaunch(t *testing.T) {
 	}
 	if classifyConverterError("rtsp://user:secret@camera:554/onvif1: Connection refused") != "camera_recusou_conexao" {
 		t.Fatal("safe error classification")
+	}
+}
+
+// Reconnect replaces a hung converter, while repeated play requests preserve
+// the fresh converter shared by foreground viewers and motion monitoring.
+func TestReconnectReplacesOnlyStaleConverter(t *testing.T) {
+	for _, scenario := range []struct {
+		name     string
+		age      time.Duration
+		playlist bool
+		restart  bool
+	}{
+		{"live", time.Second, true, false},
+		{"stalled", 30 * time.Second, true, true},
+		{"startup_grace", 20 * time.Second, false, false},
+		{"startup_stuck", 55 * time.Second, false, true},
+	} {
+		t.Run(scenario.name, func(t *testing.T) {
+			dir := t.TempDir()
+			now := time.Now()
+			calls := 0
+			s := &streamManager{dir: dir, binary: "missing", cmd: exec.Command("unused"), started: now.Add(-scenario.age), cfg: Config{Host: "127.0.0.1", Port: 554, Path: "/onvif2"}, launch: func(*exec.Cmd) error { calls++; return exec.ErrNotFound }}
+			if scenario.playlist {
+				p := filepath.Join(dir, "live.m3u8")
+				if err := os.WriteFile(p, []byte("#EXTM3U\n"), 0600); err != nil {
+					t.Fatal(err)
+				}
+				if err := os.Chtimes(p, now.Add(-scenario.age), now.Add(-scenario.age)); err != nil {
+					t.Fatal(err)
+				}
+			}
+			available, code := s.status()
+			if scenario.restart && (available || code != "video_sem_progresso" || s.diagnostic().Stage != "video_sem_progresso") {
+				t.Fatal("stale video reported live", available, code)
+			}
+			err := s.start()
+			if scenario.restart {
+				if err == nil || calls != 1 {
+					t.Fatal("reconnect did not replace stuck process", calls, err)
+				}
+			} else if err != nil || calls != 0 {
+				t.Fatal("healthy or starting converter restarted", calls, err)
+			}
+		})
 	}
 }

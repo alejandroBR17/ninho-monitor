@@ -52,6 +52,12 @@ func (s *streamManager) start() error {
 	s.lifecycle.Lock()
 	defer s.lifecycle.Unlock()
 	s.mu.Lock()
+	stale := s.staleLocked(time.Now())
+	s.mu.Unlock()
+	if stale {
+		s.stopLocked()
+	}
+	s.mu.Lock()
 	s.last = time.Now()
 	if s.cmd != nil || s.starting {
 		s.mu.Unlock()
@@ -255,9 +261,26 @@ func (s *streamManager) idleLoop(ctx context.Context) {
 		}
 	}
 }
+
+// A playlist on disk is not evidence of a live converter. Share this check
+// between status and start so reconnect can replace a hung process atomically.
+// Call only while holding mu. The startup grace preserves slow HEVC probing.
+func (s *streamManager) staleLocked(now time.Time) bool {
+	if s.cmd == nil || s.starting {
+		return false
+	}
+	info, err := os.Stat(filepath.Join(s.dir, "live.m3u8"))
+	if err != nil {
+		return !s.started.IsZero() && now.Sub(s.started) > 50*time.Second
+	}
+	return now.Sub(info.ModTime()) > 25*time.Second
+}
 func (s *streamManager) status() (bool, string) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
+	if s.staleLocked(time.Now()) {
+		return false, "video_sem_progresso"
+	}
 	_, e := os.Stat(filepath.Join(s.dir, "live.m3u8"))
 	return s.cmd != nil && e == nil, s.errorCode
 }
@@ -268,7 +291,10 @@ func (s *streamManager) diagnostic() videoDiagnostic {
 	if !s.started.IsZero() {
 		d.ElapsedMS = time.Since(s.started).Milliseconds()
 	}
-	if s.cmd != nil {
+	if s.staleLocked(time.Now()) {
+		d.Stage = "video_sem_progresso"
+		d.Hint = "playlist_sem_atualizacao"
+	} else if s.cmd != nil {
 		if _, e := os.Stat(filepath.Join(s.dir, "live.m3u8")); e == nil {
 			d.Stage = "video_disponivel"
 			d.Hint = ""

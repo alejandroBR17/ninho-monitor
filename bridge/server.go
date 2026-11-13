@@ -227,7 +227,7 @@ func (b *bridge) handler() http.Handler {
 			}
 			video, err := b.stream.status()
 			ready, ptzErr := b.motion.status()
-			jsonReply(w, 200, map[string]any{"videoDisponivel": video, "erroVideo": err, "controlePronto": ready, "erroControle": ptzErr, "atrasoMedido": false, "ponteVersao": "1.5.0", "diagnosticoVideo": b.stream.diagnostic()})
+			jsonReply(w, 200, map[string]any{"videoDisponivel": video, "erroVideo": err, "controlePronto": ready, "erroControle": ptzErr, "atrasoMedido": false, "ponteVersao": "1.5.1", "diagnosticoVideo": b.stream.diagnostic()})
 		case "/api/prepare":
 			if r.Method != "POST" {
 				fail(w, 405, "metodo_recusado")

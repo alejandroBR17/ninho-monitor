@@ -1,4 +1,4 @@
-# Ninho Monitor — Ponte 1.5.0 — Windows x64
+# Ninho Monitor — Ponte 1.5.1 — Windows x64
 
 Ponte pessoal para câmera RTSP/ONVIF: notebook Windows → túnel HTTPS → Jortan Viewer Android ou visualizador Safari/Chrome. No iPhone, a página pode ser adicionada à Tela de Início; não exige app de câmera de terceiros nem IPA.
 
@@ -118,7 +118,7 @@ Se o notebook desligar, suspender ou perder toda a internet, a própria ponte n�
 
 Testes automatizados e sintéticos estão em VALIDACAO.md. A leitura de bateria pela API do Windows e a entrega no iPhone precisam de confirmação nos aparelhos reais; não foram medidas neste ambiente Linux.
 
-## Identidade visual — 1.5.0
+## Identidade visual — 1.5.1
 
 Nova marca Ninho Monitor: um ninho abstrato envolvendo um ponto central. Interface web, login, configuração local e ícones PWA usam o mesmo símbolo. A fonte Manrope é servida pelo próprio notebook, nos pesos 400 e 600, com licença SIL OFL 1.1 incluída.
 
@@ -129,3 +129,9 @@ O executável conserva o nome interno JortanPonte.exe para os atalhos existentes
 No iPhone, um atalho já instalado pode conservar o ícone antigo até ser adicionado novamente à Tela de Início. Se recriar o atalho, autorize notificações outra vez e use Enviar teste; os dados da câmera continuam no notebook.
 
 Os testes Go e a reprodução sintética do navegador preservam a distinção entre validação de software e funcionamento físico. Não houve nova verificação real de movimento, bateria Windows ou entrega de push no iPhone.
+
+## Correções da versão 1.5.1
+
+Reconexão de conversor sem progresso, recuperação de erro durante a abertura e retomada após permissões do sistema. Copiar diagnóstico está ao lado do vídeo e no rodapé, inclusive sem conexão ou login; o relatório identifica a última consulta e não inclui credenciais. Ajustes de notificação não reiniciam o vídeo.
+
+Para atualizar, feche a ponte, extraia o pacote novo em outra pasta e abra o mesmo comando de endereço fixo. As preferências protegidas são reutilizadas. Feche e reabra o visualizador no iPhone para carregar a nova versão; o rodapé mostra 1.5.1. Não precisa reinstalar o Android.

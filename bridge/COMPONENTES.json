@@ -1,6 +1,6 @@
 {
   "bridge": {
-    "version": "1.5.0",
+    "version": "1.5.1",
     "go": "1.27.4",
     "sourceIncluded": true,
     "minimumGo": "1.26.0"
@@ -21,8 +21,8 @@
   },
   "files": {
     "JortanPonte.exe": {
-      "sha256": "195a540cd77dece7cc38f9aefd4a568f3b574bc03bd6bda31f4ef268309f69c6",
-      "bytes": 9252352
+      "sha256": "20b749030f941c7ebd0cdb4e144fb943cadfce73a72f9e54843165e6655af18c",
+      "bytes": 9255936
     },
     "cloudflared.exe": {
       "sha256": "d5c1d82031da6253dcdcff64c944cd0fe063016edeb2e4fd088075fc9bd52d0a",

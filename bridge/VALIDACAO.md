@@ -1,4 +1,4 @@
-# Validação da ponte 1.5.0
+# Validação da ponte 1.5.1
 
 16 testes Go com detector de races aprovados, inclusive usando Go 1.27.4. Reprodução integrada sintética via Chromium em viewport 390×844: H.264/PCMA e HEVC sem áudio convertidos para HLS H.264 640×360, readyState 4, reprodução avançando, sem erros JS e sem overflow. Sair da conta revoga acesso HLS (HTTP 401). UI remota de joystick testada com respostas simuladas: 3 pedidos, incluindo parada. Controles de câmera exercitados em HTTP/XML sintético e com interrupção por perda de heartbeat; não houve movimento físico nesta validação.
 
@@ -43,8 +43,17 @@ Chromium com RTSP H.264/PCMA e FFmpeg reais usando câmera sintética: reproduç
 
 Service worker em VM: avisos de bateria, energia, perda/retomada de imagem, notificação de teste, clique limitado à própria origem e nenhum cache HLS. Push criptografado continua coberto pelo teste RFC 8291/VAPID. Nenhum aviso foi enviado a um aparelho real neste ambiente. Executável compilado para Windows x64; DPAPI e GetSystemPowerStatus precisam de execução no notebook real.
 
-## Identidade Ninho Monitor — 1.5.0
+## Identidade Ninho Monitor — 1.5.1
 
 24 testes Go com detector de races aprovados após adicionar os ativos da marca. No Chromium, vídeo sintético, histórico, modos, perfis, rotinas, filtros, limpeza de histórico, desconexão, logout e rotação de tela cheia passaram sem erros JavaScript. Layouts 320×700, 390×844 e 844×390 sem overflow. Capturas do login verificaram a nova marca e a fonte local. Não houve validação física nova da câmera ou iPhone.
 
 O site de download preserva o mecanismo de reconstrução e SHA-256, o APK Android existente e a audiência privada. Links, contraste e conteúdo foram verificados. A prévia de navegador gerenciada do Sites não estava disponível; a página hospedada não foi validada visualmente por esse ambiente.
+
+
+## Reconexão e diagnóstico — Ponte 1.5.1
+
+Uma playlist existente deixou de ser tratada como vídeo ativo quando fica sem atualização por mais de 25 segundos. Conectar reaproveita o conversor saudável e substitui um processo travado; a preparação inicial mantém sua tolerância de tempo. Erros recebidos durante a conexão ficam pendentes para recuperação, em vez de serem ignorados. Uma pausa do sistema durante permissões deixa de ser confundida com o botão Pausar.
+
+Copiar diagnóstico fica junto ao vídeo e no rodapé, inclusive sem login. Se a ponte não responder, o relatório inclui a última consulta com horário e até 40 eventos locais, sem senha, endereço, token ou assinatura push. Os eventos ficam apenas na memória da página; uma recarga limpa essa sequência. O teste de push tem prazo de rede maior que o prazo de envio no servidor.
+
+Validação em Linux: 25 testes Go com detector de races; Chromium com RTSP sintético, mudanças de perfis/avisos, envio de teste recusado simulado, ocultar/retornar à página, pausa explícita preservada, erro durante conexão, playlist 404, cópia de diagnóstico offline e sem login, telas de 320/390/844 px. Um FFmpeg de teste foi suspenso de propósito: a ponte o substituiu e o vídeo voltou sem recarregar a aba. Não houve reprodução da falha no iPhone real nem confirmação de sua causa específica; entrega real de push, Windows/DPAPI e câmera física não foram validados neste reparo.
