@@ -94,7 +94,7 @@ window.addEventListener('pagehide',parkVideo);window.addEventListener('pageshow'
 window.addEventListener('online',()=>{if(wantsVideo&&csrf&&!document.hidden&&!autoStopped)scheduleRecovery()});
 $('logout').addEventListener('click',async()=>{const pending=api('logout',{});endSession();try{await pending}catch{}});
 api('session').then(s=>{if(s.authenticated){csrf=s.csrf;showViewer()}else if(!s.configured)message('Conclua a configuração da ponte no notebook.');}).catch(e=>message(e.message));
-$('diagnostic').addEventListener('click',async()=>{try{const s=await api('status');const report=JSON.stringify({produto:'Jortan Ponte',horario:new Date().toISOString(),...s},null,2);try{await navigator.clipboard.writeText(report);message('Diagnóstico copiado.')}catch{const field=$('diagnostic-text');field.hidden=false;field.value=report;field.focus();field.select();message('Selecione e copie o diagnóstico abaixo.')}}catch(e){message(e.message)}});
+$('diagnostic').addEventListener('click',async()=>{try{const s=await api('status');const report=JSON.stringify({produto:'Ninho Monitor · Ponte',horario:new Date().toISOString(),...s},null,2);try{await navigator.clipboard.writeText(report);message('Diagnóstico copiado.')}catch{const field=$('diagnostic-text');field.hidden=false;field.value=report;field.focus();field.select();message('Selecione e copie o diagnóstico abaixo.')}}catch(e){message(e.message)}});
 if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
 
 const pad=$('joystick'),knob=$('knob');let padPointer=null,padExpired=false,padLimit=null;

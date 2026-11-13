@@ -86,4 +86,4 @@ Este é um repositório público de código, com exemplos de rede fictícios. Se
 
 ## Dependências
 
-As licenças e os créditos das dependências foram preservados. O código próprio ainda não possui uma licença de redistribuição definida.
+As licenças e os créditos das dependências foram preservados. O código próprio está sob a [licença MIT](LICENSE). Bibliotecas e componentes de terceiros mantêm suas próprias licenças.
