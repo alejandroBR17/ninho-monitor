@@ -30,9 +30,11 @@ const fs = require('node:fs');
     await page.setViewportSize({ width: 390, height: 1000 });
     await page.evaluate(() => scrollTo(0, 0));
     await page.locator('#viewer-stage').screenshot({ path: path.join(output, 'viewer-mobile-scene.webp'), type: 'webp', quality: 88 });
-    await page.setViewportSize({ width: 390, height: 472 });
-    await page.evaluate(() => scrollTo(0, document.querySelector('.event-card').getBoundingClientRect().top + scrollY - 16));
-    await page.screenshot({ path: path.join(output, 'events-detail.webp'), type: 'webp', quality: 88 });
+    const historyClip = await page.locator('.event-card').evaluate(element => {
+      const rect = element.getBoundingClientRect();
+      return { x: rect.x + scrollX, y: rect.y + scrollY, width: rect.width, height: Math.min(rect.height, 440) };
+    });
+    await page.screenshot({ path: path.join(output, 'events-detail.webp'), type: 'webp', quality: 88, fullPage: true, clip: historyClip });
     if (errors.length) throw new Error('Erros JS durante a demonstração: ' + errors.join('; '));
     await page.click('#logout');
     console.log('Três capturas com vídeo sintético e sem erros JS.');

@@ -90,4 +90,4 @@ Ao terminar, interrompa a fonte e a ponte com Ctrl+C. Nenhum túnel ou endpoint 
 
 `docs/media/demo-room.webp` é a cena fictícia gerada para a apresentação. `tools/scene-source.py` a publica somente no loopback, com uma pequena animação e a identificação DEMO no vídeo quando a fonte de texto está disponível. Não recebe imagem de uma câmera real e não altera a implementação de produção.
 
-As capturas principal e móvel focam o painel de vídeo, evitando áreas vazias da página. O histórico é um recorte de 472 px e fica recolhido no README. O padrão de barras de teste anterior continua disponível em `apps/android/scripts/rtsp_fixture.py` para diagnóstico técnico, mas não é a vitrine visual do projeto.
+As capturas principal e móvel focam o painel de vídeo, evitando áreas vazias da página. O histórico é um recorte de 440 px e fica recolhido no README. O padrão de barras de teste anterior continua disponível em `apps/android/scripts/rtsp_fixture.py` para diagnóstico técnico, mas não é a vitrine visual do projeto.

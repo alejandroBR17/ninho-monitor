@@ -22,4 +22,4 @@ Os testes foram executados em Linux. Não houve uma nova validação de hardware
 
 ## Atualização das imagens de demonstração
 
-A apresentação usa uma cena doméstica fictícia gerada por IA, publicada por uma fonte RTSP de loopback e convertida pela ponte. O script de captura verifica avanço real do reprodutor, presença do vídeo e ausência de erros JavaScript. Nenhuma imagem doméstica foi usada. O histórico foi reduzido a um recorte de 472 px e está recolhido no README. O controle físico continua fora do escopo da demonstração.
+A apresentação usa uma cena doméstica fictícia gerada por IA, publicada por uma fonte RTSP de loopback e convertida pela ponte. O script de captura verifica avanço real do reprodutor, presença do vídeo e ausência de erros JavaScript. Nenhuma imagem doméstica foi usada. O histórico foi reduzido a um recorte de 440 px e está recolhido no README. O controle físico continua fora do escopo da demonstração.
