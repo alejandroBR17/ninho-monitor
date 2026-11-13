@@ -1,6 +1,6 @@
 {
   "android": "2.5.0+17",
-  "bridge": "1.4.0",
+  "bridge": "1.5.0",
   "files": [
     {
       "path": "apps/android/.gitignore",
@@ -180,7 +180,7 @@
     },
     {
       "path": "apps/android/docs/DESIGN.md",
-      "sha256": "1c7ee74fa58eb01d8f1b8dfbbd9eb40fef2c85ad14fbe2418bddc0d9254b33e4"
+      "sha256": "6110dfd475a8e85530475de36fd75c253e33a63e57794c88fc524b0a432335ed"
     },
     {
       "path": "apps/android/ios/Podfile",
@@ -584,7 +584,7 @@
     },
     {
       "path": "bridge/VALIDACAO.md",
-      "sha256": "d7ad874b17730b52636fd3094c3ac7ee70a0143fc79ca2da9a24aded888b3fae"
+      "sha256": "1767e54d8c223a91b0f6aee8b15b82079d459e25ed3ecce71f6a5e14d55a82cb"
     },
     {
       "path": "bridge/health_other.go",
@@ -644,7 +644,7 @@
     },
     {
       "path": "bridge/COMPONENTES.json",
-      "sha256": "bb1bb05f4895e6a5225a26454b354b267e62c87b36c88e55aa912bf9553235f4"
+      "sha256": "caadd2616996ae67b49c38f2ea7fc30384555942577b99a59dc787026c83c8bc"
     },
     {
       "path": "bridge/motion.go",
@@ -656,11 +656,11 @@
     },
     {
       "path": "bridge/main.go",
-      "sha256": "a6deb9b15c5575ddae51edb0b59a6e485a3c781bb89a5e71e5feee7e8a633448"
+      "sha256": "31de6e289080146fbcc737935430aaac22da7361b4d572b7f7e5fea2f8561e2e"
     },
     {
       "path": "bridge/README.md",
-      "sha256": "c9e53d03659f87de519a91d16fce49553709a378232cc0999cde885a2df9e97f"
+      "sha256": "71514a1f9e883c6db6e68bd90fd554ae17e2fd81fc2ab5df800853097ed8b364"
     },
     {
       "path": "bridge/go.sum",
@@ -680,7 +680,7 @@
     },
     {
       "path": "bridge/server.go",
-      "sha256": "af3e52c0f2a4c8a08117230b15bfd8ff389cd70c68eb82e01baddbbb346ff094"
+      "sha256": "fbdeb67668ba5ef8d3d881130517cccb1c57351cb64b426944bddbf4903eae96"
     },
     {
       "path": "bridge/alerts.go",
@@ -692,7 +692,7 @@
     },
     {
       "path": "bridge/DESIGN.md",
-      "sha256": "1c7ee74fa58eb01d8f1b8dfbbd9eb40fef2c85ad14fbe2418bddc0d9254b33e4"
+      "sha256": "6110dfd475a8e85530475de36fd75c253e33a63e57794c88fc524b0a432335ed"
     },
     {
       "path": "bridge/health.go",
@@ -704,7 +704,7 @@
     },
     {
       "path": "bridge/web/index.html",
-      "sha256": "025f9428b0910e66b08d662fc9a385605187d1cdefaf4caa98ce292627bfc6ff"
+      "sha256": "3c39c865c25d32a35b63e08551daeba749f5d5f045994245c9fddb3521d203b7"
     },
     {
       "path": "bridge/web/setup.js",
@@ -716,19 +716,19 @@
     },
     {
       "path": "bridge/web/sw.js",
-      "sha256": "bb074958346c6e756862b2e967941c9cd4b7dcf179634309ff0ac632cfa56cc8"
+      "sha256": "e3a66bef1a0da57898bcdec82fe234d3e9cb20633f205ac9c09eb58c6c02eab9"
     },
     {
       "path": "bridge/web/setup.html",
-      "sha256": "953f6c5d51ac5cc7b3395732ed21fd6e168bed189cbcd92bb1edaa955991c5c7"
+      "sha256": "399e1496aa23e6535ad9f5fb1e4e22d6067f83864329c58ebbdc1b6ef43bb736"
     },
     {
       "path": "bridge/web/manifest.webmanifest",
-      "sha256": "c0c122549935be57a71a8b652beff8c7e9a7dcc3492b010c5c4f549992fa2cbb"
+      "sha256": "333960babe9a72a5e16194c1f9645c0e849cf66488d1e75d3721337899224572"
     },
     {
       "path": "bridge/web/style.css",
-      "sha256": "3aa11634fc8814de6e4db6973550a542cc3528d05733437f893b801fc88491e0"
+      "sha256": "753c60f5c79c0905ec511df9cfc102aae5182630fd5910813e0539c630bafc49"
     },
     {
       "path": "bridge/web/app.js",
@@ -736,11 +736,11 @@
     },
     {
       "path": "bridge/web/icon180.png",
-      "sha256": "fea05542e6d6070029277695844e040eb28fd5dd86837e0b9f133a7f7a5c9fb6"
+      "sha256": "26e19b020419196dadcc1409ef06b9fcbd6773d65dc3dcf885f68a8bd3eb94d3"
     },
     {
       "path": "bridge/web/icon.svg",
-      "sha256": "7758aa9a50635d8b6928b11a3a2a212acd977dc025c3ce09884b4b5f9e6819e9"
+      "sha256": "4c0d35256b734739b3ae14f6848eccae512fa36fe246815a8a80c122b193930f"
     },
     {
       "path": "bridge/web/alerts.js",
@@ -800,19 +800,19 @@
     },
     {
       "path": "website/AGENTS.md",
-      "sha256": "efeabb29f6c6bebcb499d2b78be59eeef2a697f62024fe3a6a3b5beeca31caf0"
+      "sha256": "49f726ab1fdcffc4baedd02f8b8d3808d1fa89ccdc4943bdc8cb5f9aa45b852c"
     },
     {
       "path": "website/DESIGN.md",
-      "sha256": "1c7ee74fa58eb01d8f1b8dfbbd9eb40fef2c85ad14fbe2418bddc0d9254b33e4"
+      "sha256": "6110dfd475a8e85530475de36fd75c253e33a63e57794c88fc524b0a432335ed"
     },
     {
       "path": "website/dist/index.html",
-      "sha256": "6f4e44ed84f30a43e42d6ccd23f661edec36f60b48c74a38a1cdba6902f7630d"
+      "sha256": "951b35a2260f1ba780ba4c612746c55e311a5081ff92059aa65dbbd8f4610f64"
     },
     {
       "path": "website/dist/iphone.html",
-      "sha256": "5e369952cb46e033325e0929940e53c0e322682a6d7342d16fac184e58d83784"
+      "sha256": "3ab29b8b2f136ae8ec7484b94bef4f5ebb08bd591916329450c1cb23c08c0ef8"
     },
     {
       "path": "website/dist/manifest.json",
@@ -820,19 +820,19 @@
     },
     {
       "path": "website/dist/style.css",
-      "sha256": "2f025032b83ab4b20aae8598084bb8ce6b882149fe6cde8c78f48e9ecc7a7b4d"
+      "sha256": "e6fc32e4b402c72f0ff9b74007f53245770745ed872ade1592db34812eb0f0b2"
     },
     {
       "path": "website/dist/bridge-download.js",
-      "sha256": "b4c765793b31f706f173c31af5c201b51e060a940e24bd492c0ff351d426318d"
+      "sha256": "cf1c60dbe9f738822f80895eec2cfa50fc03b37ecf1424bcd7d111b862504255"
     },
     {
       "path": "website/dist/bridge.html",
-      "sha256": "17373a6777af889d7e16c36146cef7b850b6c9af79bc490dcb9e3d13415da4ac"
+      "sha256": "75f4b396fe0e2e8487bb490583c6c223a5c9de086cd30d2a9ce9b8f0c1dce67f"
     },
     {
       "path": "website/dist/bridge-manifest.json",
-      "sha256": "f5e8ffa37934b30fdb090dbf1bff0d6456dc1d8ade0ea0949f08ec66f4b4b82e"
+      "sha256": "e0933fd00db7f0a7435cbe772dac1d68d810cd42277a10ac3b32faf67f5f6a2e"
     },
     {
       "path": "website/dist/iphone.js",
@@ -848,7 +848,7 @@
     },
     {
       "path": "website/dist/files/PONTE-LEIA-ME.txt",
-      "sha256": "059e41146a005e7e0be4d6c566b2fddde1b66fe4b19a588a6bd1082fade26fa3"
+      "sha256": "71514a1f9e883c6db6e68bd90fd554ae17e2fd81fc2ab5df800853097ed8b364"
     },
     {
       "path": "website/dist/files/ENDERECO-FIXO.txt",
@@ -856,11 +856,11 @@
     },
     {
       "path": "bridge/INICIAR-PONTE.cmd",
-      "sha256": "5b6b5e719752c96125f7ddc9fb2354dbe050bfd0fe116409e8c1e0b1d6f95766"
+      "sha256": "ba5722f5c7f7e90c73008c2e732328aa79989bd6dbf52aa3c2378b7112ecb8ae"
     },
     {
       "path": "bridge/INICIAR-COM-ENDERECO-FIXO.cmd",
-      "sha256": "3d4e698e8d8f094113dff172d82f75e5006fd41c53493e43700c3d4566285855"
+      "sha256": "49e6618a25aa388f6eb0257128974f89c6cd97878daaac4da3265cd755fb0944"
     }
   ],
   "generatedFilesNotTracked": [
@@ -900,8 +900,27 @@
       "bridge/web/sw.js",
       "bridge/web/manifest.webmanifest",
       "bridge/web/app.js",
-      "bridge/web/alerts.js"
+      "bridge/web/alerts.js",
+      "apps/android/docs/DESIGN.md",
+      "bridge/VALIDACAO.md",
+      "bridge/COMPONENTES.json",
+      "bridge/main.go",
+      "bridge/server.go",
+      "bridge/DESIGN.md",
+      "bridge/web/style.css",
+      "bridge/web/icon180.png",
+      "bridge/web/icon.svg",
+      "website/AGENTS.md",
+      "website/DESIGN.md",
+      "website/dist/index.html",
+      "website/dist/iphone.html",
+      "website/dist/style.css",
+      "website/dist/bridge-download.js",
+      "website/dist/bridge.html",
+      "bridge/INICIAR-PONTE.cmd",
+      "bridge/INICIAR-COM-ENDERECO-FIXO.cmd"
     ],
-    "portfolioChanges": "Identidade vis\u00edvel web, licen\u00e7a MIT autorizada, CI e documenta\u00e7\u00e3o de portf\u00f3lio. Bin\u00e1rios instalados e hospedagem privada inalterados."
+    "portfolioChanges": "Identidade vis\u00edvel web, licen\u00e7a MIT autorizada, CI e documenta\u00e7\u00e3o de portf\u00f3lio. Bin\u00e1rios instalados e hospedagem privada inalterados.",
+    "brandRelease": "Ninho Monitor 1.5: nova marca vetorial, fonte local e identidade consistente no visualizador e site; protocolos e identidades protegidas preservados."
   }
 }

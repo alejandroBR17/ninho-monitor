@@ -6,6 +6,7 @@ A licença MIT da raiz aplica-se ao código próprio do Ninho Monitor. Ela não 
 | --- | --- |
 | Dependências Flutter / media_kit | [Avisos do aplicativo](apps/android/THIRD_PARTY_NOTICES.md), pubspec.yaml e pubspec.lock |
 | Playwright · captura de demonstração | Dependência de desenvolvimento em [tools/package.json](tools/package.json), licença Apache-2.0 da distribuição original |
+| Manrope | [SIL OFL 1.1 incluída](bridge/web/fonts/OFL.txt); fonte local da interface |
 | hls.js | [Licença incluída](bridge/web/vendor/HLS-LICENSE.txt) |
 | webpush-go | [Licença incluída](bridge/licenses/WEBPUSH-LICENSE.txt) |
 | golang-jwt | [Licença incluída](bridge/licenses/JWT-LICENSE.txt) |

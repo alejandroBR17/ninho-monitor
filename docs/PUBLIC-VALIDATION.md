@@ -23,3 +23,10 @@ Os testes foram executados em Linux. Não houve uma nova validação de hardware
 ## Atualização das imagens de demonstração
 
 A apresentação usa uma cena doméstica fictícia gerada por IA, publicada por uma fonte RTSP de loopback e convertida pela ponte. O script de captura verifica avanço real do reprodutor, presença do vídeo e ausência de erros JavaScript. Nenhuma imagem doméstica foi usada. O histórico foi reduzido a um recorte de 440 px e está recolhido no README. O controle físico continua fora do escopo da demonstração.
+
+
+## Marca e interface — Ponte 1.5.0
+
+24 testes Go com detector de races aprovados. Reprodução, histórico, rotinas, filtros, desconexão, logout e tela cheia em retrato e paisagem verificados no Chromium com fonte sintética. A tipografia Manrope é local e os arquivos de licença OFL acompanham o código. Nenhum dado de produção foi usado nas capturas.
+
+O site de download foi redesenhado com a mesma marca. Links, contraste, manifesto e reconstrução dos downloads foram verificados. A prévia gerenciada do Sites não estava disponível; a página hospedada não foi validada visualmente neste ambiente.

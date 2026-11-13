@@ -227,7 +227,7 @@ func (b *bridge) handler() http.Handler {
 			}
 			video, err := b.stream.status()
 			ready, ptzErr := b.motion.status()
-			jsonReply(w, 200, map[string]any{"videoDisponivel": video, "erroVideo": err, "controlePronto": ready, "erroControle": ptzErr, "atrasoMedido": false, "ponteVersao": "1.4.0", "diagnosticoVideo": b.stream.diagnostic()})
+			jsonReply(w, 200, map[string]any{"videoDisponivel": video, "erroVideo": err, "controlePronto": ready, "erroControle": ptzErr, "atrasoMedido": false, "ponteVersao": "1.5.0", "diagnosticoVideo": b.stream.diagnostic()})
 		case "/api/prepare":
 			if r.Method != "POST" {
 				fail(w, 405, "metodo_recusado")
@@ -283,7 +283,7 @@ func (b *bridge) handler() http.Handler {
 				return
 			}
 			switch r.URL.Path {
-			case "/", "/index.html", "/app.js", "/viewer-layout.js", "/alerts.js", "/home.js", "/style.css", "/manifest.webmanifest", "/sw.js", "/icon.svg", "/icon180.png", "/vendor/hls.min.js", "/vendor/HLS-LICENSE.txt":
+			case "/", "/index.html", "/app.js", "/viewer-layout.js", "/alerts.js", "/home.js", "/style.css", "/manifest.webmanifest", "/sw.js", "/icon.svg", "/icon180.png", "/icon192.png", "/icon512.png", "/ninho-symbol.svg", "/fonts/Manrope.ttf", "/fonts/OFL.txt", "/vendor/hls.min.js", "/vendor/HLS-LICENSE.txt":
 				static.ServeHTTP(w, r)
 			default:
 				http.NotFound(w, r)

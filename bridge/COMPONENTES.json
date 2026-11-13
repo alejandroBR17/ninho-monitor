@@ -1,6 +1,6 @@
 {
   "bridge": {
-    "version": "1.4.0",
+    "version": "1.5.0",
     "go": "1.27.4",
     "sourceIncluded": true,
     "minimumGo": "1.26.0"
@@ -21,8 +21,8 @@
   },
   "files": {
     "JortanPonte.exe": {
-      "sha256": "59245d5bfd51fadad5a6a9ecced8d9c8463a2a2ad4871bde93b46b698bb12c47",
-      "bytes": 9046528
+      "sha256": "195a540cd77dece7cc38f9aefd4a568f3b574bc03bd6bda31f4ef268309f69c6",
+      "bytes": 9252352
     },
     "cloudflared.exe": {
       "sha256": "d5c1d82031da6253dcdcff64c944cd0fe063016edeb2e4fd088075fc9bd52d0a",
@@ -55,5 +55,11 @@
       "version": "0.59.0",
       "license": "X-CRYPTO-LICENSE.txt"
     }
-  ]
+  ],
+  "manrope": {
+    "source": "https://github.com/google/fonts/tree/main/ofl/manrope",
+    "version": "Version 4.505",
+    "license": "SIL OFL 1.1",
+    "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+  }
 }

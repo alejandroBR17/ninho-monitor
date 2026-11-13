@@ -62,7 +62,7 @@ func main() {
 		}
 	}()
 	setup := "http://" + listener.Addr().String() + "/setup#" + b.setupNonce
-	fmt.Println("JORTAN PONTE 1.4.0 — WINDOWS\nMantenha esta janela aberta e a tampa do notebook aberta.\nConfigure a câmera na página local que será aberta:")
+	fmt.Println("NINHO MONITOR 1.5.0 — WINDOWS\nMantenha esta janela aberta e a tampa do notebook aberta.\nConfigure a câmera na página local que será aberta:")
 	fmt.Println(setup)
 	openBrowser(setup)
 	if !*local {

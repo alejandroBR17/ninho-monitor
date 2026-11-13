@@ -1,4 +1,4 @@
-# Site Jortan Viewer
+# Site Ninho Monitor
 
 Antes de alterar a interface leia `DESIGN.md`. Preserve os princípios do usuário nas próximas versões: contraste 4,5:1; espaços 8/16/24/32; pesos 400/600; botão mínimo 48 e toque 44; uma ação primária por etapa; sem texto em gradiente e sem badge com borda.
 

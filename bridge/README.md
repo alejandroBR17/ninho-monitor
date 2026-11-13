@@ -1,4 +1,4 @@
-# Ninho Monitor — Ponte 1.4.0 — Windows x64
+# Ninho Monitor — Ponte 1.5.0 — Windows x64
 
 Ponte pessoal para câmera RTSP/ONVIF: notebook Windows → túnel HTTPS → Jortan Viewer Android ou visualizador Safari/Chrome. No iPhone, a página pode ser adicionada à Tela de Início; não exige app de câmera de terceiros nem IPA.
 
@@ -117,3 +117,15 @@ A chegada da imagem é observada durante monitoramento ativo, com tolerância in
 Se o notebook desligar, suspender ou perder toda a internet, a própria ponte não consegue enviar notificação. A página aberta mostra Sem confirmação ao perder contato; não mantém um estado antigo de Tudo bem. Avisar sobre uma indisponibilidade total com o aplicativo fechado exigiria um monitor independente fora do notebook, ainda não incluído.
 
 Testes automatizados e sintéticos estão em VALIDACAO.md. A leitura de bateria pela API do Windows e a entrega no iPhone precisam de confirmação nos aparelhos reais; não foram medidas neste ambiente Linux.
+
+## Identidade visual — 1.5.0
+
+Nova marca Ninho Monitor: um ninho abstrato envolvendo um ponto central. Interface web, login, configuração local e ícones PWA usam o mesmo símbolo. A fonte Manrope é servida pelo próprio notebook, nos pesos 400 e 600, com licença SIL OFL 1.1 incluída.
+
+A nova apresentação mantém câmera, senha remota, histórico, rotinas, assinaturas push, diretório de dados protegido e limites PTZ. Feche a ponte antiga, extraia este pacote e abra INICIAR-COM-ENDERECO-FIXO.cmd para continuar com o endereço já configurado. Reabra o visualizador e entre com a senha remota. Não salve a configuração da câmera novamente se não quiser alterá-la.
+
+O executável conserva o nome interno JortanPonte.exe para os atalhos existentes. A marca visível da ponte e do visualizador é Ninho Monitor. O APK Android 2.5 não foi substituído nesta atualização da interface web.
+
+No iPhone, um atalho já instalado pode conservar o ícone antigo até ser adicionado novamente à Tela de Início. Se recriar o atalho, autorize notificações outra vez e use Enviar teste; os dados da câmera continuam no notebook.
+
+Os testes Go e a reprodução sintética do navegador preservam a distinção entre validação de software e funcionamento físico. Não houve nova verificação real de movimento, bateria Windows ou entrega de push no iPhone.

@@ -7,6 +7,8 @@
 
 **Uma câmera RTSP/ONVIF existente, um notebook Windows como ponte e uma interface própria no Android e no iPhone.** O Ninho Monitor integra reprodução de vídeo, controle de movimento, eventos e automações, sem exigir outro aplicativo de câmera no iPhone.
 
+A identidade visual usa um ninho abstrato e a mesma tipografia no site e no visualizador. Os arquivos [SVG/PNG da marca](brand/README.md) estão disponíveis no repositório.
+
 ## O problema que o projeto resolve
 
 Uma câmera que já funcionava na rede local precisava ser acessada pelo Android e pelo navegador do iPhone. O firmware respondia a parte do ONVIF, mas recusava consultas de capacidades e não seguia integralmente a negociação esperada pelo reprodutor. O vídeo HEVC também precisava chegar ao navegador em outro formato.
@@ -100,7 +102,7 @@ A análise identifica mudança na imagem, sem determinar se uma criança acordou
 
 ```text
 apps/android/       Aplicativo Flutter 2.5.0 · build 17
-bridge/             Ponte Go 1.4.0 e visualizador web incorporado
+bridge/             Ponte Go 1.5.0 e visualizador web incorporado
 website/            Código do site de download e guias
 legacy/web-bridge/   Protótipo JavaScript anterior
 .github/workflows/  Testes automatizados

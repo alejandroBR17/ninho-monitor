@@ -1,4 +1,4 @@
-# Validação da ponte 1.4.0
+# Validação da ponte 1.5.0
 
 16 testes Go com detector de races aprovados, inclusive usando Go 1.27.4. Reprodução integrada sintética via Chromium em viewport 390×844: H.264/PCMA e HEVC sem áudio convertidos para HLS H.264 640×360, readyState 4, reprodução avançando, sem erros JS e sem overflow. Sair da conta revoga acesso HLS (HTTP 401). UI remota de joystick testada com respostas simuladas: 3 pedidos, incluindo parada. Controles de câmera exercitados em HTTP/XML sintético e com interrupção por perda de heartbeat; não houve movimento físico nesta validação.
 
@@ -42,3 +42,9 @@ Leituras de energia simuladas: tomada, saída da tomada, 20%, 8%, recuperação 
 Chromium com RTSP H.264/PCMA e FFmpeg reais usando câmera sintética: reprodução, evento de movimento no histórico, troca de modo, edição de perfil sem notificações, adicionar/desativar/remover rotina, filtros e exclusão de histórico. Layout 320×700, 390×844 e 844×390 sem overflow; tela cheia por rotação preservada. Interrupção da API da ponte removeu a confirmação de disponibilidade. Estado de bateria baixa renderizado com resposta simulada. Logout limpou histórico da página e revogou acesso HTTP (401), sem erros JS.
 
 Service worker em VM: avisos de bateria, energia, perda/retomada de imagem, notificação de teste, clique limitado à própria origem e nenhum cache HLS. Push criptografado continua coberto pelo teste RFC 8291/VAPID. Nenhum aviso foi enviado a um aparelho real neste ambiente. Executável compilado para Windows x64; DPAPI e GetSystemPowerStatus precisam de execução no notebook real.
+
+## Identidade Ninho Monitor — 1.5.0
+
+24 testes Go com detector de races aprovados após adicionar os ativos da marca. No Chromium, vídeo sintético, histórico, modos, perfis, rotinas, filtros, limpeza de histórico, desconexão, logout e rotação de tela cheia passaram sem erros JavaScript. Layouts 320×700, 390×844 e 844×390 sem overflow. Capturas do login verificaram a nova marca e a fonte local. Não houve validação física nova da câmera ou iPhone.
+
+O site de download preserva o mecanismo de reconstrução e SHA-256, o APK Android existente e a audiência privada. Links, contraste e conteúdo foram verificados. A prévia de navegador gerenciada do Sites não estava disponível; a página hospedada não foi validada visualmente por esse ambiente.

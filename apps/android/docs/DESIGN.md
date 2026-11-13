@@ -1,4 +1,4 @@
-# Diretrizes de interface — Jortan Viewer
+# Diretrizes de interface — Ninho Monitor
 
 Preferência persistida a pedido do usuário em 05/11/2026. Aplica-se ao aplicativo e ao site de download. Referência visual: checklist de UI de Cleilton Rocha, @cleiltonrocha.dev, enviado pelo usuário.
 
@@ -58,3 +58,8 @@ Solicitado pelo usuário: controles próximos à imagem e tela cheia em paisagem
 ## Central da casa — Ponte 1.4
 
 O usuário aprovou histórico de eventos, modos Casa/Fora/Dormir, automações e avisos simples do notebook para acompanhar a bebê dormindo. Manter vídeo e controles em primeiro plano; modos resumidos acima, detalhes de ajustes recolhidos. Histórico de metadados autenticado, limitado e apagável, sem gravação ou fotos implícitas. Movimento não confirma que a bebê acordou; não inferir sono, respiração ou saúde. Avisos de tomada/bateria/chegada da imagem devem distinguir atenção, recuperação e estado desconhecido, sem informações técnicas no uso diário. Não manter Tudo bem após perda de contato. Explicar que desligamento/internet indisponível impede a própria ponte de enviar push. Automações de horário são explícitas, no relógio do notebook, sem movimento físico ou localização automática. Preservar preferências e assinaturas nas atualizações.
+
+
+## Marca Ninho Monitor — 1.5
+
+Solicitada pelo usuário para substituir o símbolo de câmera e alinhar o site ao nome Ninho Monitor. Usar o ninho abstrato de duas curvas e ponto central, fonte Manrope nos pesos 400/600 e os tokens de cor já definidos. Os SVGs canônicos estão em brand/ no repositório principal; a PWA contém cópias incorporadas. A fonte é local e sua licença OFL deve acompanhar as entregas. Ícones de câmera são permitidos para a função de vídeo, sem representar a marca. Manter espaçamento 8/16/24/32, contraste, áreas de toque e distinção entre informação confirmada e estado desconhecido. Não converter uma mudança visual em alteração de autenticação, armazenamento ou limites de controle.
