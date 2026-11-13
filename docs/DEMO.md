@@ -1,6 +1,6 @@
 # Demonstração local com vídeo sintético
 
-As capturas do README mostram o visualizador web executado com um fluxo de teste. Não representam imagem doméstica ou comprovação de movimento físico.
+As capturas do README mostram a interface reproduzindo uma cena fictícia de ambiente doméstico, gerada por IA. A imagem é transformada em vídeo com um pequeno deslocamento e transmitida por RTSP; a ponte a converte para HLS. Não é uma imagem da casa do proprietário nem comprovação de movimento físico.
 
 ## Preparar
 
@@ -9,7 +9,7 @@ Instale Go >=1.26, Python 3, FFmpeg e o executável MediaMTX, obtido de https://
 Em um terminal, na raiz do repositório:
 
 ```sh
-python apps/android/scripts/rtsp_fixture.py --mediamtx /caminho/para/mediamtx --audio
+python tools/scene-source.py --mediamtx /caminho/para/mediamtx
 ```
 
 No Windows, use `python` e o caminho correspondente ao executável `.exe`.
@@ -84,3 +84,10 @@ Se já tiver Chromium instalado, `BROWSER_BIN` pode apontar para seu executável
 O comando espera que a ponte de demonstração esteja configurada. Informe a senha fictícia por `NINHO_DEMO_PASSWORD`; os exemplos do script não devem ser usados em produção. Os arquivos vão para `docs/media/`. Não execute a captura contra uma instalação doméstica real.
 
 Ao terminar, interrompa a fonte e a ponte com Ctrl+C. Nenhum túnel ou endpoint público é necessário para esta demonstração.
+
+
+## Fonte usada na apresentação
+
+`docs/media/demo-room.webp` é a cena fictícia gerada para a apresentação. `tools/scene-source.py` a publica somente no loopback, com uma pequena animação e a identificação DEMO no vídeo quando a fonte de texto está disponível. Não recebe imagem de uma câmera real e não altera a implementação de produção.
+
+As capturas principal e móvel focam o painel de vídeo, evitando áreas vazias da página. O histórico é um recorte de 472 px e fica recolhido no README. O padrão de barras de teste anterior continua disponível em `apps/android/scripts/rtsp_fixture.py` para diagnóstico técnico, mas não é a vitrine visual do projeto.

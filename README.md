@@ -15,13 +15,20 @@ A implementação separou essas responsabilidades: cliente Android para acesso l
 
 ## Em uso
 
-![Visualizador web com vídeo sintético, modo Dormir e controles](docs/media/viewer-desktop.webp)
+![Visualizador web reproduzindo uma cena doméstica fictícia pelo fluxo RTSP/HLS](docs/media/viewer-desktop-scene.webp)
 
-| Celular | Histórico de eventos |
-| --- | --- |
-| ![Visualizador móvel com controles próximos da imagem](docs/media/viewer-mobile.webp) | ![Histórico de eventos na demonstração](docs/media/events-mobile.webp) |
+*Interface em execução. A cena é fictícia, gerada por IA e transmitida pelo fluxo RTSP/HLS da demonstração. Não é uma imagem da casa do proprietário nem prova de validação em uma câmera física.*
 
-*Capturas da interface executando com uma fonte RTSP sintética. Nenhuma imagem doméstica, credencial ou dado real de monitoramento foi usado. O controle físico não é validado por essa demonstração.*
+<details>
+<summary>Ver a tela do celular e um detalhe dos eventos</summary>
+
+<p><strong>Visualização no celular</strong></p>
+<img src="docs/media/viewer-mobile-scene.webp" alt="Visualizador móvel reproduzindo a cena fictícia" width="280">
+
+<p><strong>Recorte do histórico</strong></p>
+<img src="docs/media/events-detail.webp" alt="Detalhe compacto dos eventos da demonstração" width="280">
+
+</details>
 
 ## O que vale olhar no código
 
