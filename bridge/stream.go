@@ -14,6 +14,11 @@ import (
 
 type videoDiagnostic struct {
 	Stage            string `json:"etapa"`
+	RelayAccepted    bool   `json:"conversorConectouPonte"`
+	CameraConnected  bool   `json:"conexaoCameraAberta"`
+	LastRTSPStage    string `json:"ultimaEtapaRtsp,omitempty"`
+	CameraError      string `json:"erroCamera,omitempty"`
+	ExitCode         *int   `json:"saidaConversor,omitempty"`
 	Method           string `json:"ultimoMetodoRtsp,omitempty"`
 	Status           int    `json:"ultimoStatusRtsp,omitempty"`
 	Packets          int64  `json:"pacotesIntercalados"`
@@ -91,6 +96,16 @@ func (s *streamManager) start() error {
 	}
 	relay, e := newRelayWithEvents(cfg, func(stage, method string, status int, packetBytes int, repair bool) {
 		s.update(g, func(d *videoDiagnostic) {
+			d.LastRTSPStage = stage
+			if stage == "conectando_camera" {
+				d.RelayAccepted = true
+			}
+			if stage == "controle_rtsp_conectado" {
+				d.CameraConnected = true
+			}
+			if strings.HasPrefix(stage, "camera_") {
+				d.CameraError = stage
+			}
 			if d.Frames == 0 {
 				d.Stage = stage
 			}
@@ -169,13 +184,18 @@ func (s *streamManager) start() error {
 	go func() {
 		defer close(done)
 		cmd.Wait()
+		code := cmd.ProcessState.ExitCode()
 		relay.close()
 		s.mu.Lock()
 		defer s.mu.Unlock()
 		if s.generation == g && s.cmd == cmd {
+			s.diag.ExitCode = &code
 			s.cmd = nil
 			if s.errorCode == "" {
-				s.errorCode = s.diag.Hint
+				s.errorCode = s.diag.CameraError
+				if s.errorCode == "" {
+					s.errorCode = s.diag.Hint
+				}
 				if s.errorCode == "" {
 					s.errorCode = "video_interrompido"
 				}

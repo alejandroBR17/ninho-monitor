@@ -2,6 +2,8 @@ package main
 
 import (
 	"bufio"
+	"fmt"
+	"io"
 	"net"
 	"net/textproto"
 	"os"
@@ -124,4 +126,65 @@ func TestReconnectReplacesOnlyStaleConverter(t *testing.T) {
 			}
 		})
 	}
+}
+
+// A generic converter failure must not erase an earlier camera socket error.
+func TestCameraConnectionFailureSurvivesConverterExit(t *testing.T) {
+	listener, err := net.Listen("tcp4", "127.0.0.1:0")
+	if err != nil {
+		t.Fatal(err)
+	}
+	address := listener.Addr().(*net.TCPAddr)
+	listener.Close()
+	s := &streamManager{dir: t.TempDir(), binary: "unused", cfg: Config{Host: "127.0.0.1", Port: address.Port, Path: "/onvif2"}}
+	s.launch = func(cmd *exec.Cmd) error {
+		var relayURL string
+		for _, arg := range cmd.Args {
+			if strings.HasPrefix(arg, "rtsp://") {
+				relayURL = arg
+				break
+			}
+		}
+		executable, err := os.Executable()
+		if err != nil {
+			return err
+		}
+		cmd.Path = executable
+		cmd.Err = nil
+		cmd.Args = []string{executable, "-test.run=^TestCameraFailureHelper$"}
+		cmd.Env = append(os.Environ(), "NINHO_RELAY_TEST=1", "NINHO_TEST_RELAY_URL="+relayURL)
+		return cmd.Start()
+	}
+	defer s.stop()
+	if err := s.start(); err != nil {
+		t.Fatal(err)
+	}
+	select {
+	case <-s.done:
+	case <-time.After(5 * time.Second):
+		t.Fatal("converter fixture timed out")
+	}
+	available, code := s.status()
+	d := s.diagnostic()
+	if available || code != "camera_recusou_conexao" || !d.RelayAccepted || d.CameraConnected || d.CameraError != code || d.Hint != "video_nao_identificado" || d.ExitCode == nil || *d.ExitCode != 1 {
+		t.Fatalf("camera cause lost: %v %s %+v", available, code, d)
+	}
+	if got := cameraConnectionError(&net.OpError{Op: "dial", Err: os.ErrDeadlineExceeded}); got != "camera_sem_resposta" {
+		t.Fatal(got)
+	}
+}
+func TestCameraFailureHelper(t *testing.T) {
+	if os.Getenv("NINHO_RELAY_TEST") != "1" {
+		return
+	}
+	target := strings.Split(strings.TrimPrefix(os.Getenv("NINHO_TEST_RELAY_URL"), "rtsp://"), "/")[0]
+	c, err := net.DialTimeout("tcp", target, time.Second)
+	if err != nil {
+		os.Exit(2)
+	}
+	c.SetReadDeadline(time.Now().Add(3 * time.Second))
+	io.Copy(io.Discard, c)
+	c.Close()
+	fmt.Fprintln(os.Stderr, "Invalid data found when processing input")
+	os.Exit(1)
 }

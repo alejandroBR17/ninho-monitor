@@ -12,9 +12,11 @@ import (
 	"net/textproto"
 	"net/url"
 	"regexp"
+	"runtime"
 	"strconv"
 	"strings"
 	"sync"
+	"syscall"
 	"time"
 )
 
@@ -234,11 +236,7 @@ func (p *rtspRelay) serve(local net.Conn) {
 	p.emit("conectando_camera", "", 0, 0, false)
 	remote, e := net.DialTimeout("tcp", net.JoinHostPort(p.cfg.Host, itoa(p.cfg.Port)), 5*time.Second)
 	if e != nil {
-		code := classifyConverterError(e.Error())
-		if code == "" {
-			code = "camera_sem_conexao"
-		}
-		p.emit(code, "", 0, 0, false)
+		p.emit(cameraConnectionError(e), "", 0, 0, false)
 		return
 	}
 	p.emit("controle_rtsp_conectado", "", 0, 0, false)
@@ -318,6 +316,15 @@ func (p *rtspRelay) serve(local net.Conn) {
 	for {
 		w, e := readWire(r)
 		if e != nil {
+			if !errors.Is(e, net.ErrClosed) {
+				code := "camera_resposta_rtsp_invalida"
+				if errors.Is(e, io.EOF) || errors.Is(e, io.ErrUnexpectedEOF) {
+					code = "camera_encerrou_conexao"
+				} else if ne, ok := e.(net.Error); ok && ne.Timeout() {
+					code = "camera_sem_resposta"
+				}
+				p.emit(code, "", 0, 0, false)
+			}
 			return
 		}
 		if w.frame != nil {
@@ -400,4 +407,33 @@ func rewriteCameraURIs(value string, cfg Config, source string) string {
 		u.Path = base.Path + u.Path
 		return u.String()
 	})
+}
+
+// Retain only stable error codes, never the address/credentials from OpError.
+func cameraConnectionError(err error) string {
+	var ne net.Error
+	if errors.As(err, &ne) && ne.Timeout() {
+		return "camera_sem_resposta"
+	}
+	if errors.Is(err, syscall.ECONNREFUSED) {
+		return "camera_recusou_conexao"
+	}
+	if errors.Is(err, syscall.ENETUNREACH) || errors.Is(err, syscall.EHOSTUNREACH) {
+		return "camera_fora_da_rede"
+	}
+	// Winsock's native error numbers differ from Go's portable errno constants.
+	if runtime.GOOS == "windows" {
+		var code syscall.Errno
+		if errors.As(err, &code) {
+			switch code {
+			case 10061:
+				return "camera_recusou_conexao"
+			case 10060:
+				return "camera_sem_resposta"
+			case 10051, 10065:
+				return "camera_fora_da_rede"
+			}
+		}
+	}
+	return "camera_sem_conexao"
 }

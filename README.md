@@ -102,7 +102,7 @@ A análise identifica mudança na imagem, sem determinar se uma criança acordou
 
 ```text
 apps/android/       Aplicativo Flutter 2.5.0 · build 17
-bridge/             Ponte Go 1.5.1 e visualizador web incorporado
+bridge/             Ponte Go 1.5.2 e visualizador web incorporado
 website/            Código do site de download e guias
 legacy/web-bridge/   Protótipo JavaScript anterior
 .github/workflows/  Testes automatizados

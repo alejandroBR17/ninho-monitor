@@ -39,3 +39,10 @@ Uma playlist existente deixou de ser tratada como vídeo ativo quando fica sem a
 Copiar diagnóstico fica junto ao vídeo e no rodapé, inclusive sem login. Se a ponte não responder, o relatório inclui a última consulta com horário e até 40 eventos locais, sem senha, endereço, token ou assinatura push. Os eventos ficam apenas na memória da página; uma recarga limpa essa sequência. O teste de push tem prazo de rede maior que o prazo de envio no servidor.
 
 Validação em Linux: 25 testes Go com detector de races; Chromium com RTSP sintético, mudanças de perfis/avisos, envio de teste recusado simulado, ocultar/retornar à página, pausa explícita preservada, erro durante conexão, playlist 404, cópia de diagnóstico offline e sem login, telas de 320/390/844 px. Um FFmpeg de teste foi suspenso de propósito: a ponte o substituiu e o vídeo voltou sem recarregar a aba. Não houve reprodução da falha no iPhone real nem confirmação de sua causa específica; entrega real de push, Windows/DPAPI e câmera física não foram validados neste reparo.
+
+
+## Câmera desligada ou inacessível — Ponte 1.5.2
+
+O diagnóstico conserva o erro de conexão da câmera separadamente da saída genérica do conversor. Informa se o conversor alcançou a ponte local, se a conexão TCP da câmera abriu, a última etapa RTSP e o código numérico de saída. Timeout, recusa e rede inacessível são classificados sem registrar endereço ou credenciais, incluindo os códigos Winsock. Respostas interrompidas ou malformadas têm códigos próprios. A primeira conexão manual também ganha até três novas tentativas; depois pede intervenção do usuário.
+
+Testes Linux/Chromium com câmera sintética e porta local recusada verificam a preservação da causa após falha do conversor, o limite de tentativas e uma conexão bem-sucedida posterior. As verificações de notificações, visibilidade, pausa e diagnóstico offline da 1.5.1 foram repetidas. O diagnóstico enviado pelo usuário indicava falha antes de negociar RTSP; ele informou posteriormente que a câmera estava desligada. Não foi confirmada a causa da tentativa posterior à religação na câmera real, nem o IP atual.
